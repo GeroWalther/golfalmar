@@ -3,19 +3,19 @@ import { Plus, ExternalLink } from "lucide-react";
 import { AdminNav } from "@/components/admin/admin-nav";
 import { Button } from "@/components/ui/button";
 import { connectDB } from "@/lib/db";
-import { BlogPost } from "@/lib/models/blog-post";
+import { BlogPost, type BlogPostDoc } from "@/lib/models/blog-post";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminBlogListPage() {
-  let posts: Awaited<ReturnType<typeof BlogPost.find>> = [];
+  let posts: BlogPostDoc[] = [];
   let dbError = false;
   try {
     await connectDB();
     posts = await BlogPost.find({})
       .sort({ updatedAt: -1 })
       .limit(200)
-      .lean();
+      .lean<BlogPostDoc[]>();
   } catch (e) {
     console.error("[admin/blog]", e);
     dbError = true;

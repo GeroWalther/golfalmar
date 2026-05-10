@@ -1,18 +1,21 @@
 import { Download, CheckCircle2, Circle } from "lucide-react";
 import { AdminNav } from "@/components/admin/admin-nav";
 import { connectDB } from "@/lib/db";
-import { NewsletterSubscriber } from "@/lib/models/newsletter-subscriber";
+import {
+  NewsletterSubscriber,
+  type NewsletterSubscriberDoc,
+} from "@/lib/models/newsletter-subscriber";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminSubscribersPage() {
-  let subscribers: Awaited<ReturnType<typeof NewsletterSubscriber.find>> = [];
+  let subscribers: NewsletterSubscriberDoc[] = [];
   let dbError = false;
   try {
     await connectDB();
     subscribers = await NewsletterSubscriber.find({})
       .sort({ createdAt: -1 })
-      .lean();
+      .lean<NewsletterSubscriberDoc[]>();
   } catch (e) {
     console.error("[admin/subscribers]", e);
     dbError = true;

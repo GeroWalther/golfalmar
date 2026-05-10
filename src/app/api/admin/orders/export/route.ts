@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import { Order } from "@/lib/models/order";
-import { isAdmin } from "@/lib/auth";
 
 export const runtime = "nodejs";
 
@@ -15,9 +14,6 @@ function csvEscape(v: unknown): string {
 }
 
 export async function GET() {
-  if (!(await isAdmin())) {
-    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  }
   await connectDB();
   const orders = await Order.find({}).sort({ createdAt: -1 }).lean();
 

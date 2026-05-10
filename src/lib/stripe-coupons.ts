@@ -64,7 +64,7 @@ export async function createSingleUsePromoCode(opts: {
     const code = generateHumanCode();
     try {
       const promo = await stripe.promotionCodes.create({
-        coupon: couponId,
+        promotion: { type: "coupon", coupon: couponId },
         code,
         max_redemptions: 1,
         metadata: opts.customerEmail

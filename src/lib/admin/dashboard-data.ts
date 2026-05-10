@@ -91,7 +91,7 @@ export async function getDashboardData(): Promise<DashboardData | null> {
   const recentOrders = orders.slice(0, 5).map((o) => ({
     _id: String(o._id),
     email: o.email,
-    name: o.name,
+    name: o.name ?? undefined,
     amountTotalCents: o.amountTotalCents ?? 0,
     status: o.status,
     createdAt: o.createdAt,

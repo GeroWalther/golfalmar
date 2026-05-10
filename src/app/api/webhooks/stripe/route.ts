@@ -56,7 +56,7 @@ export async function POST(req: Request) {
     })
     .filter((x): x is NonNullable<typeof x> => x !== null);
 
-  const shipping = session.shipping_details ?? session.collected_information?.shipping_details;
+  const shipping = session.collected_information?.shipping_details;
   const customerEmail = session.customer_details?.email ?? session.customer_email ?? "";
   const customerName =
     session.customer_details?.name ?? shipping?.name ?? undefined;
@@ -83,7 +83,10 @@ export async function POST(req: Request) {
     amountTotalCents: session.amount_total ?? 0,
     shippingCents: session.shipping_cost?.amount_total ?? 0,
     currency: session.currency ?? "eur",
-    locale: session.metadata?.locale ?? "en",
+    locale:
+      (["en", "de", "es"] as const).find(
+        (l) => l === session.metadata?.locale,
+      ) ?? "en",
     status: "paid",
   });
 

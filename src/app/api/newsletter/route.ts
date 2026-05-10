@@ -85,7 +85,7 @@ export async function POST(req: Request) {
       try {
         await sendNewsletterWelcomeEmail({
           email: doc.email,
-          name: doc.name,
+          name: doc.name ?? undefined,
           code,
           locale: doc.locale ?? "en",
         });

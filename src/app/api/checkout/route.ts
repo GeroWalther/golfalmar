@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
 import { PRODUCTS, getProduct } from "@/lib/products";
 import { clampQty } from "@/lib/cart";
@@ -21,11 +20,11 @@ const Body = z.object({
   locale: z.enum(["en", "de", "es"]).default("en"),
 });
 
-const STRIPE_LOCALE_MAP: Record<"en" | "de" | "es", Stripe.Checkout.SessionCreateParams.Locale> = {
+const STRIPE_LOCALE_MAP = {
   en: "en",
   de: "de",
   es: "es",
-};
+} as const;
 
 export async function POST(req: Request) {
   let parsed;

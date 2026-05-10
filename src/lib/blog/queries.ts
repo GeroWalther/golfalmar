@@ -21,9 +21,9 @@ function toPublic(doc: BlogPostDoc): PublicPost {
     _id: String(doc._id),
     slug: doc.slug,
     title: doc.title,
-    excerpt: doc.excerpt,
-    coverImage: doc.coverImage,
-    coverImageAlt: doc.coverImageAlt,
+    excerpt: doc.excerpt ?? undefined,
+    coverImage: doc.coverImage ?? undefined,
+    coverImageAlt: doc.coverImageAlt ?? undefined,
     contentHtml: doc.contentHtml,
     author: doc.author,
     locale: doc.locale ?? "en",
@@ -43,11 +43,13 @@ export async function listPublishedPosts(
     console.error("[blog/listPublishedPosts] DB connect failed", e);
     return [];
   }
-  const query = BlogPost.find({ status: "published", locale })
-    .sort({ publishedAt: -1, createdAt: -1 });
+  const query = BlogPost.find({
+    status: "published",
+    locale: locale as "en" | "de" | "es",
+  }).sort({ publishedAt: -1, createdAt: -1 });
   if (limit) query.limit(limit);
-  const docs = await query.lean();
-  return docs.map((d) => toPublic(d as BlogPostDoc));
+  const docs = await query.lean<BlogPostDoc[]>();
+  return docs.map((d) => toPublic(d));
 }
 
 export async function getPublishedPostBySlug(

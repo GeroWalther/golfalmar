@@ -6,7 +6,6 @@ import { OrdersToolbar } from "@/components/admin/orders-toolbar";
 import { connectDB } from "@/lib/db";
 import { Order } from "@/lib/models/order";
 import { formatCents } from "@/lib/admin/dashboard-data";
-import type { FilterQuery } from "mongoose";
 import type { OrderDoc } from "@/lib/models/order";
 
 export const dynamic = "force-dynamic";
@@ -23,12 +22,12 @@ export default async function AdminOrdersPage({
   const status = sp.status;
   const q = sp.q?.trim() ?? "";
 
-  let orders: Awaited<ReturnType<typeof Order.find>> = [];
+  let orders: OrderDoc[] = [];
   let total = 0;
   let dbError = false;
   try {
     await connectDB();
-    const filter: FilterQuery<OrderDoc> = {};
+    const filter: Record<string, unknown> = {};
     if (status && ["paid", "fulfilled", "cancelled", "refunded"].includes(status)) {
       filter.status = status;
     }
@@ -41,7 +40,7 @@ export default async function AdminOrdersPage({
         .sort({ createdAt: -1 })
         .skip((page - 1) * PAGE_SIZE)
         .limit(PAGE_SIZE)
-        .lean(),
+        .lean<OrderDoc[]>(),
       Order.countDocuments(filter),
     ]);
   } catch (e) {
