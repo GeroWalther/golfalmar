@@ -21,7 +21,9 @@ export const PRODUCTS: Product[] = [
   {
     id: "magic-golf-grip",
     slug: "magic-golf-grip",
-    priceCents: 1990,
+    // TEMPORARY: dropped from 1990 to 100 for live end-to-end checkout test.
+    // Revert to 1990 once the order/email/webhook flow is verified.
+    priceCents: 100,
     currency: "eur",
     image: "/images/magic-grip.svg",
   },
