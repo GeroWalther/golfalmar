@@ -18,6 +18,7 @@ const BlogPostSchema = new Schema(
     },
     tags: { type: [String], default: [] },
     publishedAt: { type: Date, index: true },
+    notifiedSubscribersAt: { type: Date },
   },
   { timestamps: true },
 );

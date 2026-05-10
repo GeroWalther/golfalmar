@@ -4,6 +4,7 @@ import { connectDB } from "@/lib/db";
 import { BlogPost } from "@/lib/models/blog-post";
 import { sanitizeBlogHtml } from "@/lib/blog/sanitize";
 import { slugify, autoExcerpt } from "@/lib/blog/utils";
+import { broadcastJournalPost } from "@/lib/journal-broadcast";
 
 export const runtime = "nodejs";
 
@@ -56,5 +57,28 @@ export async function POST(req: Request) {
     tags: parsed.tags ?? [],
     publishedAt: parsed.status === "published" ? new Date() : undefined,
   });
-  return NextResponse.json({ ok: true, id: String(doc._id), slug: doc.slug });
+
+  let broadcast: { sent: number; recipients: number } | undefined;
+  if (doc.status === "published") {
+    try {
+      broadcast = await broadcastJournalPost({
+        slug: doc.slug,
+        title: doc.title,
+        excerpt: doc.excerpt ?? undefined,
+        coverImage: doc.coverImage ?? undefined,
+        locale: doc.locale ?? "en",
+      });
+      doc.notifiedSubscribersAt = new Date();
+      await doc.save();
+    } catch (e) {
+      console.error("[admin/blog POST] broadcast failed", e);
+    }
+  }
+
+  return NextResponse.json({
+    ok: true,
+    id: String(doc._id),
+    slug: doc.slug,
+    broadcast,
+  });
 }

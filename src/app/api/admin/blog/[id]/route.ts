@@ -5,6 +5,7 @@ import { connectDB } from "@/lib/db";
 import { BlogPost } from "@/lib/models/blog-post";
 import { sanitizeBlogHtml } from "@/lib/blog/sanitize";
 import { slugify, autoExcerpt } from "@/lib/blog/utils";
+import { broadcastJournalPost } from "@/lib/journal-broadcast";
 
 export const runtime = "nodejs";
 
@@ -82,7 +83,32 @@ export async function PATCH(
     post.status = parsed.status;
   }
   await post.save();
-  return NextResponse.json({ ok: true, slug: post.slug, status: post.status });
+
+  // Broadcast the post to subscribers exactly once — only after the post
+  // becomes published AND we haven't already notified for this post.
+  let broadcast: { sent: number; recipients: number } | undefined;
+  if (post.status === "published" && !post.notifiedSubscribersAt) {
+    try {
+      broadcast = await broadcastJournalPost({
+        slug: post.slug,
+        title: post.title,
+        excerpt: post.excerpt ?? undefined,
+        coverImage: post.coverImage ?? undefined,
+        locale: post.locale ?? "en",
+      });
+      post.notifiedSubscribersAt = new Date();
+      await post.save();
+    } catch (e) {
+      console.error("[admin/blog PATCH] broadcast failed", e);
+    }
+  }
+
+  return NextResponse.json({
+    ok: true,
+    slug: post.slug,
+    status: post.status,
+    broadcast,
+  });
 }
 
 export async function DELETE(
