@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="GOLF AL MAR DOLO Golf">
+  <defs>
+    <linearGradient id="dolo-tube" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3f4f6"/>
+      <stop offset="1" stop-color="#cbd5d3"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="transparent"/>
+  <g>
+    <rect x="155" y="50" width="90" height="36" rx="8" fill="#0f3d2a"/>
+    <rect x="170" y="86" width="60" height="18" rx="3" fill="#062319"/>
+    <rect x="120" y="110" width="160" height="340" rx="18" fill="url(#dolo-tube)" stroke="#0f3d2a" stroke-width="2"/>
+    <rect x="138" y="160" width="124" height="240" rx="6" fill="#ffffff" opacity="0.95"/>
+    <text x="200" y="220" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="20" fill="#0f3d2a" letter-spacing="2">GOLF AL MAR</text>
+    <text x="200" y="270" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="42" fill="#0f3d2a">DOLO</text>
+    <text x="200" y="305" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="26" fill="#0f3d2a">GOLF</text>
+    <line x1="158" y1="325" x2="242" y2="325" stroke="#cee93f" stroke-width="3"/>
+    <text x="200" y="355" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="#0f3d2a">JOINT &amp; MUSCLE RELIEF</text>
+    <text x="200" y="375" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="11" fill="#0f3d2a" letter-spacing="2">FOR GOLFERS</text>
+  </g>
+</svg>

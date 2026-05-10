@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="GOLF AL MAR Sport Sunscreen">
+  <defs>
+    <linearGradient id="bottle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f6f4a"/>
+      <stop offset="0.6" stop-color="#0f3d2a"/>
+      <stop offset="1" stop-color="#0a2a1d"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f3d2a"/>
+      <stop offset="1" stop-color="#06231a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="transparent"/>
+  <g>
+    <rect x="155" y="60" width="90" height="40" rx="6" fill="url(#cap)"/>
+    <rect x="170" y="100" width="60" height="20" rx="4" fill="#06231a"/>
+    <rect x="120" y="120" width="160" height="320" rx="20" fill="url(#bottle)"/>
+    <rect x="138" y="170" width="124" height="220" rx="6" fill="#ffffff" opacity="0.92"/>
+    <text x="200" y="230" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="20" fill="#0f3d2a" letter-spacing="2">GOLF AL MAR</text>
+    <text x="200" y="260" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="32" fill="#0f3d2a">SPORT</text>
+    <text x="200" y="295" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="32" fill="#0f3d2a">SUNSCREEN</text>
+    <line x1="158" y1="320" x2="242" y2="320" stroke="#cee93f" stroke-width="3"/>
+    <text x="200" y="350" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="#0f3d2a">NON-GREASY · NON-SLIP</text>
+    <text x="200" y="370" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="#0f3d2a">FOR ACTIVE LIFESTYLE</text>
+    <circle cx="200" cy="410" r="14" fill="#cee93f"/>
+    <text x="200" y="415" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="14" fill="#0f3d2a">50</text>
+  </g>
+</svg>

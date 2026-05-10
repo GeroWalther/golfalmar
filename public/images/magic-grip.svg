@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="GOLF AL MAR Magic Golf Grip">
+  <defs>
+    <linearGradient id="tube" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cee93f"/>
+      <stop offset="1" stop-color="#a8c424"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="transparent"/>
+  <g>
+    <rect x="155" y="50" width="90" height="36" rx="8" fill="#0f3d2a"/>
+    <rect x="170" y="86" width="60" height="18" rx="3" fill="#062319"/>
+    <rect x="120" y="110" width="160" height="340" rx="18" fill="url(#tube)"/>
+    <rect x="138" y="160" width="124" height="240" rx="6" fill="#ffffff" opacity="0.9"/>
+    <text x="200" y="220" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="20" fill="#0f3d2a" letter-spacing="2">GOLF AL MAR</text>
+    <text x="200" y="260" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="34" fill="#0f3d2a">MAGIC</text>
+    <text x="200" y="298" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="34" fill="#0f3d2a">GOLF GRIP</text>
+    <line x1="158" y1="320" x2="242" y2="320" stroke="#0f3d2a" stroke-width="3"/>
+    <text x="200" y="350" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="#0f3d2a">DRIER · GRIPPIER</text>
+    <text x="200" y="370" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="#0f3d2a">MORE SOLID</text>
+  </g>
+</svg>

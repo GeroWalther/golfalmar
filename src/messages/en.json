@@ -1,0 +1,229 @@
+{
+  "seo": {
+    "title": "GOLF AL MAR — Sun Protection & Magic Grip for Golfers",
+    "titleTemplate": "%s | GOLF AL MAR",
+    "description": "Premium golf accessories — non-greasy sport sunscreen and the Magic Golf Grip for a drier, more solid grip in any weather. Designed for amateurs and professionals.",
+    "ogAlt": "GOLF AL MAR — performance gear for golfers"
+  },
+  "nav": {
+    "home": "Home",
+    "boutique": "Boutique",
+    "journal": "Journal",
+    "about": "About Us",
+    "menu": "Menu",
+    "cart": "Cart"
+  },
+  "blog": {
+    "title": "Journal",
+    "subtitle": "Notes from the course — performance, recovery, sun protection, and the craft behind GOLF AL MAR.",
+    "empty": "No posts yet — check back soon.",
+    "latestEyebrow": "Latest from the journal",
+    "latestTitle": "Notes from the course.",
+    "latestCta": "Read the journal",
+    "readMore": "Read more",
+    "minRead": "min read",
+    "by": "By"
+  },
+  "hero": {
+    "eyebrow": "Performance · Sun · Grip",
+    "title": "Play longer.\nProtect more.\nGrip stronger.",
+    "tagline": "..... made to improve your game.",
+    "subtitle": "GOLF AL MAR designs essential gear for the professional and amateur golfer — finest sport sunscreen and the legendary Magic Golf Grip, born from elite play, made for everyone on course.",
+    "primaryCta": "Shop the boutique",
+    "secondaryCta": "Our story"
+  },
+  "marquee": {
+    "items": ["Protect your skin", "Grip the game", "DOLO GOLF Joint & muscle relief", "Since 2013", "Made for golfers", "Non-greasy", "Non-slip"]
+  },
+  "brand": {
+    "eyebrow": "The brand",
+    "title": "Part of the golfer's world.",
+    "body": "The world of golf is growing — and GOLF AL MAR is part of it. Developed in 2013 for the needs of amateur and professional golfers, our mission is simple: provide exceptional products that enhance the experience and let you enjoy the game even more."
+  },
+  "problem": {
+    "eyebrow": "Why we exist",
+    "sun": {
+      "stat": "87.5M",
+      "statLabel": "golfers worldwide",
+      "title": "Five hours unprotected.",
+      "body": "Most golfers don't have adequate sun protection. Skin cancer is a growing problem. On the course you're exposed to wind, rain and sun for hours — burned noses, chins and arms come standard. Our finest sport sunscreen is non-greasy, non-slip, and made for an active lifestyle."
+    },
+    "grip": {
+      "stat": "100%",
+      "statLabel": "performance grip",
+      "title": "When the grip slips, the game slips.",
+      "body": "Humid, hot, sweaty or rainy — golf grips lose hold fast. The MAGIC GOLF GRIP is our solution: a highly efficient formula designed and inspired by elite amateur and professional players, for a drier, grippier, more solid hold on every club."
+    }
+  },
+  "products": {
+    "highlightEyebrow": "The line",
+    "highlightTitle": "Two essentials. Endless rounds.",
+    "addToCart": "Add to cart",
+    "buyNow": "Buy now",
+    "viewProduct": "View product",
+    "youMayAlsoLike": "You may also like",
+    "quantity": "Quantity",
+    "back": "Back to boutique",
+    "sport-sunscreen": {
+      "name": "Golfers Pro Sunscreen — SPF 30",
+      "tagline": "ONE APPLICATION LASTS ALL DAY",
+      "shortDescription": "Pharmaceutical-grade SPF 30 designed for golfers — sweat-resistant, non-slip, non-greasy. Blocks 96.6% of UVB. One application lasts all day.",
+      "longDescription": "On the course, you're exposed to wind, rain and sun for at least five hours — often during the strongest UV window of the day. The result, after years of play: burned noses and arms, photo-aging, and a measurable rise in skin cancer risk. Most golfers simply don't have adequate sun protection.\n\nGOLF AL MAR Golfers Pro Sunscreen was developed exclusively to close that gap. Pharmaceutical-grade SPF 30, blocking 96.6% of damaging UVB. Sweat-resistant, non-slip, non-greasy — one application lasts all day, so you can focus on the round, not on reapplying.",
+      "sensitiveTitle": "Sun-sensitive skin?",
+      "sensitiveBody": "GOLF AL MAR Golfers Sunscreen is ideal for sensitive skin. Recommended for those at increased risk of photo-damage, with a family history of skin cancer, or using medications that increase UV sensitivity. Daily protection from damaging sun-rays remains one of the best methods to retain young, healthy skin.",
+      "blockedClaim": "Blocks 96.6% of UVB",
+      "featuresTitle": "Pharmaceutical grade",
+      "features": [
+        "Sweat resistant",
+        "Non-slip formula",
+        "Non-greasy formula",
+        "Helps shield your DNA from UVA and UVB induced damage",
+        "Broad spectrum UVA / UVB protection",
+        "Moisturising while protecting the skin from sunburn",
+        "Absorbs fast — leaves skin clean",
+        "Non comedogenic",
+        "Won't run into your eyes",
+        "Fragrance free",
+        "PABA free",
+        "One application lasts all day"
+      ],
+      "testedTitle": "Tested for",
+      "tested": [
+        "Photo-allergenic potential",
+        "Photo-toxic potential",
+        "Primary skin irritation",
+        "Sun protection factor",
+        "Extended waterproof",
+        "Sweat-proof, non-run formula",
+        "Rub-proof determinations"
+      ]
+    },
+    "magic-golf-grip": {
+      "name": "Golfers Pro Magic Grip",
+      "tagline": "GRIPPIER. DRIER. MORE SOLID.",
+      "shortDescription": "Performance grip enhancer for hot, humid, sweaty and rainy rounds. A grippier, drier, more solid hold on every club — inspired by elite amateurs and tour professionals.",
+      "longDescription": "Golfers Pro Magic Grip is your answer when conditions try to take the grip away from you. The moment your hands — or your grip — lose contact, the swing comes apart. Hot. Humid. Sweaty. Rain on the back nine.\n\nWe developed a technology that enhances the grip of the hands — restoring the confidence, the consistency, and the simple enjoyment of the round. Whether you're new to the game or competing at the highest level as a tour professional, having the right gear is critical to playing your best golf.\n\nA highly efficient formula, inspired by elite amateur and professional players. The goal: improve your grip, improve your game, and enjoy it even more.",
+      "useTitle": "Built for any weather",
+      "useBody": "Designed to perform when the round gets tough — driving rain, high humidity, midday heat, or that 14th-hole sweat. Apply to clean, dry hands before the tee. Re-apply between holes if conditions demand it.",
+      "featuresTitle": "Engineered for grip",
+      "features": [
+        "Grippier, drier, more solid hold",
+        "Performs in rain, humidity, heat and sweat",
+        "Inspired by elite amateurs and tour professionals",
+        "Fast-drying — no residue on grips or gloves",
+        "Won't damage clubs, gloves or grip wraps",
+        "Travels with you — pocket-sized",
+        "For every level — beginner to tour pro"
+      ],
+      "areasTitle": "Designed for",
+      "areas": [
+        "Driving rain",
+        "High humidity",
+        "Midday heat",
+        "Sweaty hands",
+        "Greasy or oily skin",
+        "Mid-round refresh"
+      ],
+      "promise": "Improve your grip. Improve your game."
+    },
+    "dolo-golf": {
+      "name": "DOLO Golf — Joint & Muscle Relief Cream",
+      "tagline": "PLAY BETTER. PLAY WITHOUT PAIN.",
+      "shortDescription": "A botanical anti-inflammatory cream built for golfers. Calms pain, accelerates recovery, supports joint longevity — without synthetic actives.",
+      "longDescription": "Golf is a contact sport. Every swing loads the spine, the lead shoulder, the elbows, the wrists. Eighteen holes is roughly two hundred high-torque rotations on a body that wasn't built symmetrically. Over time, even the pros develop unbalanced muscles, chronic stiffness, and the kind of low-grade pain that quietly erodes a swing.\n\nDOLO Golf is the answer. A deep-acting topical cream formulated to inhibit inflammatory processes, ease muscle and joint pain, and preserve the function and power that drive your game. Apply pre-round to prepare the body for load. Apply post-round to accelerate recovery and protect against the long-term wear of the sport.\n\nNo synthetic actives. No menthol burn. Just a confident plant-based formula, refined to pharmaceutical standards and engineered around the way golfers actually move.",
+      "useTitle": "The reality of being a golfer",
+      "useBody": "53% of male golfers and 45% of female golfers suffer from lower back pain. One in three is over 50 — and not always in top condition. 30% of professionals on tour are playing through an injury. DOLO Golf was developed so you don't have to.",
+      "featuresTitle": "Formula",
+      "features": [
+        "Plant-based anti-inflammatory action",
+        "Pharmaceutical-grade botanical extracts",
+        "Deep-penetrating, fast-absorbing",
+        "Supports muscle recovery and tissue repair",
+        "Helps protect joints from long-term wear",
+        "Rich in natural antioxidants",
+        "Non-greasy — won't transfer to grip or glove",
+        "No synthetic actives. No menthol burn.",
+        "Cruelty free"
+      ],
+      "areasTitle": "Targeted relief",
+      "areas": [
+        "Shoulders",
+        "Lower back",
+        "Hips",
+        "Elbows",
+        "Knees",
+        "Neck"
+      ],
+      "promise": "Play better. Play longer. Play without pain."
+    }
+  },
+  "boutique": {
+    "title": "Boutique",
+    "subtitle": "Performance gear designed for golfers, by golfers.",
+    "empty": "More products coming soon."
+  },
+  "about": {
+    "title": "About GOLF AL MAR",
+    "eyebrow": "Our story",
+    "intro": "The world of golf is growing — and GOLF AL MAR is part of it. We design essential gear for the way golfers actually play: long days under the sun, swings repeated until the body remembers, hands that lose their grip when conditions turn. Our products are built around what golfers need from the first tee to the final putt.",
+    "pullQuote": "The gear should disappear. The round should be remembered.",
+    "originTitle": "Born from a need on the course",
+    "originBody": "GOLF AL MAR was founded in 2013, born out of a simple observation made on a Mediterranean course: the gear designed for the way golfers actually live wasn't there yet. Sunscreens that ran into eyes. Grip enhancers that transferred onto gloves. Recovery products built for general athletes, not for the specific demands of the swing.\n\nWe started with a clear mandate — to develop exceptional, golf-first products that genuinely improve the experience and let you enjoy the game even more. Every formula is refined with input from amateur and professional players, then tested where it matters: on the course, in the heat, in the rain, on the eighteenth hole.",
+    "missionTitle": "Protect, perform, enjoy",
+    "missionBody": "There are 87.5 million golfers worldwide — and most have no adequate protection from the sun. The numbers around skin cancer in our community are rising, not falling. Five hours per round, often during the strongest UV window of the day, leaves burned noses, photo-aged skin, and a quiet long-term cost that nobody's tee sheet warns you about.\n\nWe designed Golfers Pro Sunscreen exactly for this. Pharmaceutical-grade SPF 30, blocking 96.6% of UVB, refined to a non-greasy, non-slip formula that survives the way golfers actually move. One application lasts a full round. The protection lasts a lifetime.",
+    "valuesTitle": "What we stand for",
+    "valuesIntro": "Three principles guide every formula we ship.",
+    "values": [
+      {
+        "title": "Performance",
+        "body": "Every product is benchmarked against the actual demands of the game — the heat, the humidity, the rotation, the long walk. If it doesn't work on the 18th hole, it doesn't ship."
+      },
+      {
+        "title": "Protection",
+        "body": "We make products for the long game. Reducing UV exposure today, easing inflammation now, preserving joint function for the decades of golf still to come."
+      },
+      {
+        "title": "Pleasure",
+        "body": "The gear should disappear. The round should be remembered. Our job is to remove the friction so you can focus on the swing — and the company you're playing it with."
+      }
+    ],
+    "productsTitle": "From the elite, for everyone",
+    "productsBody": "When the round turns against you — humidity, heat, sweat, sudden rain on the back nine — even the best grip starts to slip. So we built Golfers Pro Magic Grip: a precision-engineered hand performance formula, inspired by elite amateurs and tour professionals. It restores the contact you need to swing with confidence.\n\nAnd because eighteen holes is a marathon for the body, we added DOLO Golf — a botanical anti-inflammatory cream for the joints and muscles golfers stress most. Three products, one belief: the right gear lets you play your best, longer.",
+    "craftTitle": "The way we make things",
+    "craftBody": "We don't chase trends. We build slowly, refine constantly, and ship only when something genuinely improves on what already exists. Every formula goes through professional input, real-course testing, and a final question: would I put this in my own bag for next weekend?\n\nIf the answer is yes, it earns the GOLF AL MAR name. If not, it goes back to the lab.",
+    "noteTitle": "A note from the team",
+    "noteBody": "GOLF AL MAR is built on a simple promise: the gear should disappear, the round should be remembered. Sun on your skin, club in your hands, the rest of your foursome a few paces ahead. We hope you play longer, protect more, and grip stronger — and we hope our products make a small but real difference along the way.",
+    "noteSignoff": "— The team behind GOLF AL MAR"
+  },
+  "cart": {
+    "title": "Your cart",
+    "empty": "Your cart is empty.",
+    "shop": "Shop the boutique",
+    "checkout": "Proceed to checkout",
+    "subtotal": "Subtotal",
+    "shippingNote": "Shipping calculated at checkout.",
+    "remove": "Remove",
+    "quantity": "Quantity",
+    "decrement": "Decrease quantity",
+    "increment": "Increase quantity",
+    "openCart": "Open cart",
+    "closeCart": "Close cart",
+    "drawerTitle": "Cart",
+    "added": "Added to cart",
+    "checkoutFailed": "Could not start checkout. Please try again."
+  },
+  "checkout": {
+    "successTitle": "Thanks for your order.",
+    "successBody": "Your order is confirmed. A receipt is on its way to your inbox. We'll email you again when it ships.",
+    "successCta": "Back to boutique",
+    "cancelTitle": "Checkout cancelled.",
+    "cancelBody": "No charge was made. Your cart is still here when you're ready.",
+    "cancelCta": "Return to cart"
+  },
+  "footer": {
+    "tagline": "Protect your skin, grip the game. Performance gear for golfers since 2013.",
+    "rights": "All rights reserved.",
+    "imprint": "Imprint",
+    "privacy": "Privacy"
+  }
+}
