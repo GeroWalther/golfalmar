@@ -21,8 +21,12 @@ export const SITE_URL =
 export const SEO_KEYWORDS = [
   "Golf Al Mar",
   "golf sunscreen",
+  "sport sunscreen",
   "magic golf grip",
-  "golfer sun protection",
   "golf grip enhancer",
+  "golfer sun protection",
+  "DOLO golf",
+  "golf joint relief",
+  "golf muscle relief",
   "golf accessories",
 ];

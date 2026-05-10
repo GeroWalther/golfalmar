@@ -1,8 +1,8 @@
 {
   "seo": {
-    "title": "GOLF AL MAR — Sun Protection & Magic Grip for Golfers",
+    "title": "GOLF AL MAR — Sun Protection, Magic Grip & Joint Relief",
     "titleTemplate": "%s | GOLF AL MAR",
-    "description": "Premium golf accessories — non-greasy sport sunscreen and the Magic Golf Grip for a drier, more solid grip in any weather. Designed for amateurs and professionals.",
+    "description": "Premium golf accessories: pro sport sunscreen, Magic Golf Grip for a drier hold in any weather, and DOLO joint & muscle relief. Made to improve your game.",
     "ogAlt": "GOLF AL MAR — performance gear for golfers"
   },
   "nav": {
@@ -12,6 +12,23 @@
     "about": "About Us",
     "menu": "Menu",
     "cart": "Cart"
+  },
+  "newsletter": {
+    "eyebrow": "Join the journal",
+    "title": "15% off your first order.",
+    "subtitle": "Subscribe for our seasonal notes — performance, recovery, sun protection, and the craft behind GOLF AL MAR. We'll send your one-time 15% welcome code straight away.",
+    "perk1": "15% off your first order — applied at checkout.",
+    "perk2": "A few notes a season. Never spam.",
+    "perk3": "Unsubscribe with one click, anytime.",
+    "placeholder": "your@email.com",
+    "cta": "Subscribe",
+    "legal": "By subscribing you agree to receive occasional emails from GOLF AL MAR. Single-use code, valid on your first order.",
+    "successTitle": "Check your inbox.",
+    "successBody": "We just sent your 15% welcome code. It's yours to use once at checkout.",
+    "resentTitle": "You're already with us.",
+    "resentBody": "We just resent your welcome code to your inbox in case you'd misplaced it.",
+    "error": "Something went wrong. Please try again.",
+    "close": "Close"
   },
   "blog": {
     "title": "Journal",

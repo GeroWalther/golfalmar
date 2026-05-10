@@ -68,6 +68,7 @@ export async function POST(req: Request) {
     payment_method_types: ["card"],
     locale: STRIPE_LOCALE_MAP[parsed.locale],
     line_items: lineItems,
+    allow_promotion_codes: true,
     shipping_address_collection: {
       allowed_countries: [
         "DE",

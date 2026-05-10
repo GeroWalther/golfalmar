@@ -1,8 +1,8 @@
 {
   "seo": {
-    "title": "GOLF AL MAR — Protección solar y grip mágico para golfistas",
+    "title": "GOLF AL MAR — Protección solar, Magic Grip y alivio articular",
     "titleTemplate": "%s | GOLF AL MAR",
-    "description": "Accesorios de golf premium — protector solar deportivo no graso y el Magic Golf Grip para un agarre más seco y firme en cualquier clima. Diseñado para amateurs y profesionales.",
+    "description": "Accesorios de golf premium: protector solar deportivo, Magic Golf Grip para un agarre seco y firme, y DOLO alivio articular y muscular. Hecho para mejorar tu juego.",
     "ogAlt": "GOLF AL MAR — equipamiento de rendimiento para golfistas"
   },
   "nav": {
@@ -12,6 +12,23 @@
     "about": "Sobre nosotros",
     "menu": "Menú",
     "cart": "Carrito"
+  },
+  "newsletter": {
+    "eyebrow": "Únete al journal",
+    "title": "15 % en tu primer pedido.",
+    "subtitle": "Suscríbete a nuestras notas de temporada — rendimiento, recuperación, protección solar y el oficio detrás de GOLF AL MAR. Te enviamos tu código de bienvenida del 15 % al instante, válido una sola vez.",
+    "perk1": "15 % en tu primer pedido — aplicado al pagar.",
+    "perk2": "Pocas notas por temporada. Sin spam.",
+    "perk3": "Cancela la suscripción en un clic, cuando quieras.",
+    "placeholder": "tu@email.com",
+    "cta": "Suscribirme",
+    "legal": "Al suscribirte aceptas recibir emails ocasionales de GOLF AL MAR. Código de un solo uso, válido en tu primer pedido.",
+    "successTitle": "Revisa tu bandeja.",
+    "successBody": "Acabamos de enviarte tu código de bienvenida del 15 %. Es tuyo para usar una sola vez al pagar.",
+    "resentTitle": "Ya estás con nosotros.",
+    "resentBody": "Acabamos de reenviarte tu código de bienvenida por si lo habías perdido.",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "close": "Cerrar"
   },
   "blog": {
     "title": "Journal",
