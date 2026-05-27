@@ -25,8 +25,14 @@ export function BlogPostRowActions({
       return;
     startTransition(async () => {
       const res = await fetch(`/api/admin/blog/${id}`, { method: "DELETE" });
+      let body: { error?: string } = {};
+      try {
+        body = await res.json();
+      } catch {
+        // non-JSON response
+      }
       if (!res.ok) {
-        toast.error("Delete failed");
+        toast.error(body.error ?? `Delete failed (${res.status})`);
         return;
       }
       toast.success("Post deleted");

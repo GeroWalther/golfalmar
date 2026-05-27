@@ -115,12 +115,22 @@ export async function DELETE(
   _req: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  const { id } = await params;
-  if (!Types.ObjectId.isValid(id)) {
-    return NextResponse.json({ error: "bad id" }, { status: 400 });
+  try {
+    const { id } = await params;
+    if (!Types.ObjectId.isValid(id)) {
+      return NextResponse.json({ error: "bad id" }, { status: 400 });
+    }
+    await connectDB();
+    const result = await BlogPost.findByIdAndDelete(id);
+    if (!result) {
+      return NextResponse.json({ error: "not found" }, { status: 404 });
+    }
+    return NextResponse.json({ ok: true });
+  } catch (e) {
+    console.error("[admin/blog DELETE] failed", e);
+    return NextResponse.json(
+      { error: e instanceof Error ? e.message : "delete failed" },
+      { status: 500 },
+    );
   }
-  await connectDB();
-  const result = await BlogPost.findByIdAndDelete(id);
-  if (!result) return NextResponse.json({ error: "not found" }, { status: 404 });
-  return NextResponse.json({ ok: true });
 }
