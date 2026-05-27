@@ -4,6 +4,8 @@ export type Product = {
   priceCents: number;
   currency: "eur";
   image: string;
+  /** Optional additional images shown alongside `image` in the product detail gallery (thumbnail row + main view). */
+  gallery?: string[];
   /** Optional supporting images displayed inside the product description section. */
   descriptionImages?: { src: string; alt: string }[];
   /** Optional badge/seal image rendered above the product description as a credibility mark. */
@@ -16,7 +18,8 @@ export const PRODUCTS: Product[] = [
     slug: "sport-sunscreen",
     priceCents: 2490,
     currency: "eur",
-    image: "/images/sunscreen.svg",
+    image: "/images/sunscreenprod.jpg",
+    gallery: ["/images/sunscreentexture.jpg"],
   },
   {
     id: "magic-golf-grip",
@@ -32,7 +35,8 @@ export const PRODUCTS: Product[] = [
     slug: "dolo-golf",
     priceCents: 2290,
     currency: "eur",
-    image: "/images/dolo-golf.svg",
+    image: "/images/dologolf.jpg",
+    gallery: ["/images/dologolf-cream.jpg"],
     descriptionBadge: {
       src: "/images/dolobadge.png",
       alt: "DOLO Golf — quality seal",

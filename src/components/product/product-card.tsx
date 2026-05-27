@@ -15,7 +15,7 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className="group flex flex-col rounded-md border border-border bg-card overflow-hidden hover:shadow-lg transition-shadow">
-      <Link href={`/boutique/${product.slug}`} className="relative block aspect-[4/5] bg-sand">
+      <Link href={`/boutique/${product.slug}`} className="relative block aspect-[4/5] bg-white">
         <Image
           src={product.image}
           alt={name}

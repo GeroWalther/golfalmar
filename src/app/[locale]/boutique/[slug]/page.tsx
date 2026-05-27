@@ -6,6 +6,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { LinkButton } from "@/components/ui/link-button";
 import { QuantityAddToCart } from "@/components/cart/quantity-add-to-cart";
+import { ProductGallery } from "@/components/product/product-gallery";
 import { PRODUCTS, formatPriceEUR } from "@/lib/products";
 import { routing } from "@/i18n/routing";
 
@@ -101,16 +102,10 @@ export default async function ProductDetailPage({
       </Link>
 
       <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:gap-16 items-start">
-        <div className="relative aspect-square rounded-md border border-border bg-sand overflow-hidden">
-          <Image
-            src={product.image}
-            alt={name}
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-contain p-10 sm:p-16"
-          />
-        </div>
+        <ProductGallery
+          images={[product.image, ...(product.gallery ?? [])]}
+          alt={name}
+        />
 
         <div className="lg:sticky lg:top-24 space-y-6">
           <div>
@@ -260,7 +255,7 @@ export default async function ProductDetailPage({
                   href={`/boutique/${p.slug}`}
                   className="group flex flex-col rounded-md border border-border bg-card overflow-hidden hover:shadow-lg transition-shadow"
                 >
-                  <div className="relative aspect-[4/5] bg-sand">
+                  <div className="relative aspect-[4/5] bg-white">
                     <Image
                       src={p.image}
                       alt={otherName}
