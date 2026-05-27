@@ -7,3 +7,8 @@ node_modules
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
+
+# Local-dev artifacts from the old disk-based blog upload route.
+# Production uploads now go to Vercel Blob; nothing in this folder
+# is shipped or referenced.
+/public/uploads/
