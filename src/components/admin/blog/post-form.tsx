@@ -59,8 +59,14 @@ export function BlogPostForm({ initial }: { initial?: PostFormValues }) {
         method: "POST",
         body: fd,
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.error ?? "upload failed");
+      let data: { url?: string; error?: string } = {};
+      try {
+        data = await res.json();
+      } catch {
+        // server returned non-JSON (e.g. Vercel edge 413 HTML page)
+      }
+      if (!res.ok) throw new Error(data.error ?? `Upload failed (${res.status})`);
+      if (!data.url) throw new Error("Upload succeeded but no URL returned");
       update("coverImage", data.url);
       toast.success("Cover image uploaded");
     } catch (e) {
@@ -250,7 +256,7 @@ export function BlogPostForm({ initial }: { initial?: PostFormValues }) {
                 <Upload className="size-5 text-muted-foreground" />
               )}
               <span className="text-xs text-muted-foreground text-center">
-                Click to upload — JPG, PNG, WebP, max 5MB
+                Click to upload — JPG, PNG, WebP, HEIC (iPhone), max 5MB
               </span>
               <input
                 type="file"
