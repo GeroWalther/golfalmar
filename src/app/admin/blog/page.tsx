@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Plus, ExternalLink } from "lucide-react";
+import { Plus } from "lucide-react";
 import { AdminNav } from "@/components/admin/admin-nav";
 import { Button } from "@/components/ui/button";
+import { BlogPostRowActions } from "@/components/admin/blog/post-row-actions";
 import { connectDB } from "@/lib/db";
 import { BlogPost, type BlogPostDoc } from "@/lib/models/blog-post";
 
@@ -107,16 +108,12 @@ export default async function AdminBlogListPage() {
                       {dateFmt.format(p.updatedAt ?? p.createdAt)}
                     </td>
                     <td className="px-4 py-3 text-right">
-                      {p.status === "published" && (
-                        <Link
-                          href={`/${p.locale ?? "en"}/blog/${p.slug}`}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-1 text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-foreground"
-                        >
-                          View <ExternalLink className="size-3" />
-                        </Link>
-                      )}
+                      <BlogPostRowActions
+                        id={String(p._id)}
+                        slug={p.slug}
+                        locale={p.locale ?? "en"}
+                        status={p.status ?? "draft"}
+                      />
                     </td>
                   </tr>
                 ))}
