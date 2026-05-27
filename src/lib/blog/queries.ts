@@ -54,6 +54,7 @@ export async function listPublishedPosts(
 
 export async function getPublishedPostBySlug(
   slug: string,
+  locale: string,
 ): Promise<PublicPost | null> {
   try {
     await connectDB();
@@ -61,7 +62,11 @@ export async function getPublishedPostBySlug(
     console.error("[blog/getPublishedPostBySlug] DB connect failed", e);
     return null;
   }
-  const doc = await BlogPost.findOne({ slug, status: "published" }).lean();
+  const doc = await BlogPost.findOne({
+    slug,
+    status: "published",
+    locale: locale as "en" | "de" | "es",
+  }).lean();
   return doc ? toPublic(doc as BlogPostDoc) : null;
 }
 

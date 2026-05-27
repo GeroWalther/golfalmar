@@ -16,7 +16,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "sport-sunscreen",
     slug: "sport-sunscreen",
-    priceCents: 2490,
+    priceCents: 3200,
     currency: "eur",
     image: "/images/sunscreenprod.jpg",
     gallery: ["/images/sunscreentexture.jpg"],
@@ -26,14 +26,15 @@ export const PRODUCTS: Product[] = [
     slug: "magic-golf-grip",
     // TEMPORARY: dropped from 1990 to 100 for live end-to-end checkout test.
     // Revert to 1990 once the order/email/webhook flow is verified.
-    priceCents: 100,
+    priceCents: 1900,
     currency: "eur",
-    image: "/images/magic-grip.svg",
+    image: "/images/magicgrip-1.jpg",
+    gallery: ["/images/magicgrip-2.jpg"],
   },
   {
     id: "dolo-golf",
     slug: "dolo-golf",
-    priceCents: 2290,
+    priceCents: 3900,
     currency: "eur",
     image: "/images/dologolf.jpg",
     gallery: ["/images/dologolf-cream.jpg"],

@@ -24,7 +24,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const post = await getPublishedPostBySlug(slug);
+  const post = await getPublishedPostBySlug(slug, locale);
   if (!post) return {};
 
   const url = `${SITE_URL}/${post.locale}/blog/${post.slug}`;
@@ -96,7 +96,7 @@ export default async function BlogPostPage({
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const post = await getPublishedPostBySlug(slug);
+  const post = await getPublishedPostBySlug(slug, locale);
   if (!post) notFound();
 
   const minutes = readingMinutes(post.contentHtml);
