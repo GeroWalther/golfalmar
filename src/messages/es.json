@@ -74,7 +74,7 @@
   },
   "products": {
     "highlightEyebrow": "La línea",
-    "highlightTitle": "Dos esenciales. Rondas infinitas.",
+    "highlightTitle": "Los esenciales. Rondas infinitas.",
     "addToCart": "Añadir al carrito",
     "buyNow": "Comprar ahora",
     "viewProduct": "Ver producto",
@@ -172,6 +172,34 @@
         "Cuello"
       ],
       "promise": "Juega mejor. Juega más. Juega sin dolor."
+    },
+    "longevity-support": {
+      "name": "LONGEVITY SUPPORT",
+      "tagline": "JUEGA MÁS TIEMPO. RECUPERA MÁS RÁPIDO.",
+      "shortDescription": "Una fórmula diaria de longevidad pensada para golfistas que quieren seguir jugando durante décadas. 75 % de proteína vegana e ingredientes funcionales para una energía sostenida, una recuperación más rápida y articulaciones resistentes — cada ronda, cada año.",
+      "longDescription": "El golf es un juego largo. Cinco horas de pie, doscientas rotaciones de alta torsión y un cuerpo que tiene que seguir respondiendo dentro de treinta años. Los aficionados que siguen pegándole limpio a los setenta — y los profesionales que se mantienen competitivos temporada tras temporada — comparten un hábito: tratan su cuerpo como el equipamiento que es.\n\nLONGEVITY SUPPORT es una fórmula diaria premium construida alrededor de un 75 % de proteína vegana y un stack enfocado de ingredientes funcionales. Cordyceps para una energía y resistencia sostenidas. Boswellia serrata para el apoyo de articulaciones y tejido conectivo. Jengibre para el bienestar antiinflamatorio diario. Inulina de agave para la salud intestinal y metabólica. Acerola como fuente natural de vitamina C para la protección celular. Una cucharada, cada día.\n\nPensado para golfistas que quieren mantenerse fuertes, recuperarse más rápido entre rondas y seguir jugando su mejor golf durante las próximas décadas — no solo esta temporada.",
+      "useTitle": "Hecho para el juego largo",
+      "useBody": "A partir de los 40, el cuerpo se recupera más despacio, gana músculo con más dificultad y absorbe cada ronda con más profundidad. Los golfistas que conservan su swing hasta los sesenta y setenta son los que suplementan con constancia — proteína diaria, apoyo antiinflamatorio diario, micronutrientes diarios. LONGEVITY SUPPORT se desarrolló exactamente para eso.",
+      "featuresTitle": "Beneficios Premium",
+      "features": [
+        "Energía sostenida durante 18 hoyos",
+        "Recuperación más rápida entre rondas",
+        "Apoya la estabilidad y movilidad articular",
+        "75 % de proteína vegana premium",
+        "Apoyo antiinflamatorio diario",
+        "Apoyo prebiótico para intestino y metabolismo",
+        "Vitamina C natural para la protección celular"
+      ],
+      "areasTitle": "Ingredientes Premium",
+      "areas": [
+        "75 % Proteína vegana",
+        "Cordyceps",
+        "Boswellia serrata",
+        "Jengibre",
+        "Inulina de agave",
+        "Acerola"
+      ],
+      "promise": "Juega más fuerte. Recupera más rápido. Juega más tiempo."
     }
   },
   "boutique": {

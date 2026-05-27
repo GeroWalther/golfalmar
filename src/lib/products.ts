@@ -52,6 +52,14 @@ export const PRODUCTS: Product[] = [
       },
     ],
   },
+  {
+    id: "longevity-support",
+    slug: "longevity-support",
+    priceCents: 11900,
+    currency: "eur",
+    image: "/images/longevity.jpg",
+    gallery: ["/images/longevity2.jpg"],
+  },
 ];
 
 export function getProduct(id: string): Product | undefined {

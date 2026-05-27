@@ -74,7 +74,7 @@
   },
   "products": {
     "highlightEyebrow": "Die Linie",
-    "highlightTitle": "Zwei Essentials. Unzählige Runden.",
+    "highlightTitle": "Die Essentials. Unzählige Runden.",
     "addToCart": "In den Warenkorb",
     "buyNow": "Jetzt kaufen",
     "viewProduct": "Produkt ansehen",
@@ -172,6 +172,34 @@
         "Nacken"
       ],
       "promise": "Besser spielen. Länger spielen. Ohne Schmerz."
+    },
+    "longevity-support": {
+      "name": "LONGEVITY SUPPORT",
+      "tagline": "LÄNGER SPIELEN. SCHNELLER REGENERIEREN.",
+      "shortDescription": "Eine tägliche Longevity-Formel, entwickelt für Golfer, die noch Jahrzehnte spielen wollen. 75 % veganes Protein und funktionelle Inhaltsstoffe für anhaltende Energie, schnellere Regeneration und stabile Gelenke — Runde für Runde, Jahr für Jahr.",
+      "longDescription": "Golf ist ein langes Spiel. Fünf Stunden auf den Beinen, zweihundert hochbelastete Rotationen und ein Körper, der auch in dreißig Jahren noch liefern muss. Die Amateure, die mit siebzig noch frei schwingen — und die Profis, die Saison für Saison konkurrenzfähig bleiben — haben eine Gemeinsamkeit: Sie behandeln ihren Körper wie die Ausrüstung, die er ist.\n\nLONGEVITY SUPPORT ist eine hochwertige Tagesformel rund um 75 % veganes Protein und einen fokussierten Stack funktioneller Inhaltsstoffe. Cordyceps für anhaltende Energie und Ausdauer. Boswellia serrata zur Unterstützung von Gelenken und Bindegewebe. Ingwer für tägliches antiinflammatorisches Wohlbefinden. Agaven-Inulin für Darm- und Stoffwechselgesundheit. Acerola als natürliche Vitamin-C-Quelle für den Zellschutz. Ein Scoop, jeden Tag.\n\nEntwickelt für Golfer, die stark bleiben, schneller zwischen den Runden regenerieren und ihr bestes Golf noch über Jahrzehnte spielen wollen — nicht nur in dieser Saison.",
+      "useTitle": "Gemacht für das lange Spiel",
+      "useBody": "Ab 40 regeneriert der Körper langsamer, baut Muskeln schwerer auf und absorbiert jede Runde tiefer. Die Golfer, die ihren Schwung bis in die sechziger und siebziger Jahre behalten, sind diejenigen, die konsequent supplementieren — tägliches Protein, tägliche antiinflammatorische Unterstützung, tägliche Mikronährstoffe. LONGEVITY SUPPORT wurde genau dafür entwickelt.",
+      "featuresTitle": "Premium Benefits",
+      "features": [
+        "Anhaltende Energie über 18 Löcher",
+        "Schnellere Regeneration zwischen den Runden",
+        "Unterstützt Gelenkstabilität und Beweglichkeit",
+        "75 % veganes Premium-Protein",
+        "Tägliche antiinflammatorische Unterstützung",
+        "Präbiotische Unterstützung für Darm und Stoffwechsel",
+        "Natürliches Vitamin C für den Zellschutz"
+      ],
+      "areasTitle": "Premium Ingredients",
+      "areas": [
+        "75 % Veganes Protein",
+        "Cordyceps",
+        "Boswellia serrata",
+        "Ingwer",
+        "Agaven-Inulin",
+        "Acerola"
+      ],
+      "promise": "Stärker spielen. Schneller regenerieren. Länger spielen."
     }
   },
   "boutique": {

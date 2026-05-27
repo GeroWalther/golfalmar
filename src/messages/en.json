@@ -74,7 +74,7 @@
   },
   "products": {
     "highlightEyebrow": "The line",
-    "highlightTitle": "Two essentials. Endless rounds.",
+    "highlightTitle": "The essentials. Endless rounds.",
     "addToCart": "Add to cart",
     "buyNow": "Buy now",
     "viewProduct": "View product",
@@ -172,6 +172,34 @@
         "Neck"
       ],
       "promise": "Play better. Play longer. Play without pain."
+    },
+    "longevity-support": {
+      "name": "LONGEVITY SUPPORT",
+      "tagline": "PLAY LONGER. RECOVER FASTER.",
+      "shortDescription": "A daily longevity formula built for golfers who plan to play for decades. 75% vegan protein and functional ingredients for sustained energy, faster recovery, and joint resilience — every round, every year.",
+      "longDescription": "Golf is a long game. Five hours on your feet, two hundred high-torque rotations, and a body that needs to keep delivering thirty years from now. The amateurs who still swing freely in their seventies — and the pros who stay competitive season after season — share one habit: they treat their body like the equipment it is.\n\nLONGEVITY SUPPORT is a premium daily formula engineered around 75% vegan protein and a focused stack of functional ingredients. Cordyceps for sustained energy and endurance. Boswellia serrata for joint and connective-tissue support. Ginger for daily anti-inflammatory wellbeing. Agave inulin for gut and metabolic health. Acerola for natural vitamin C and cellular protection. One scoop, every day.\n\nBuilt for golfers who want to stay strong, recover faster between rounds, and keep playing their best golf for the next decades — not just this season.",
+      "useTitle": "Built for the long game",
+      "useBody": "After 40, the body recovers slower, builds muscle harder, and absorbs each round more deeply. The golfers who keep their swing into their sixties and seventies are the ones who supplement consistently — daily protein, daily anti-inflammatory support, daily micronutrients. LONGEVITY SUPPORT was developed exactly for this.",
+      "featuresTitle": "Premium Benefits",
+      "features": [
+        "Sustained energy through 18 holes",
+        "Faster recovery between rounds",
+        "Supports joint resilience and mobility",
+        "75% vegan premium protein",
+        "Daily anti-inflammatory support",
+        "Prebiotic gut and metabolic support",
+        "Natural vitamin C for cellular protection"
+      ],
+      "areasTitle": "Premium Ingredients",
+      "areas": [
+        "75% Vegan Protein",
+        "Cordyceps",
+        "Boswellia serrata",
+        "Ginger",
+        "Agave Inulin",
+        "Acerola"
+      ],
+      "promise": "Play stronger. Recover faster. Play longer."
     }
   },
   "boutique": {
