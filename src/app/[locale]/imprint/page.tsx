@@ -26,7 +26,6 @@ export default async function ImprintPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const tFooter = await getTranslations({ locale, namespace: "footer" });
-  const tLegal = await getTranslations({ locale, namespace: "legal" });
 
   return (
     <div className="container-page py-16 sm:py-24">
@@ -36,10 +35,7 @@ export default async function ImprintPage({
       </header>
 
       <article className="prose-blog max-w-3xl">
-        <ImprintContent
-          locale={locale as Locale}
-          notice={tLegal("imprintPlaceholderNotice")}
-        />
+        <ImprintContent locale={locale as Locale} />
       </article>
     </div>
   );

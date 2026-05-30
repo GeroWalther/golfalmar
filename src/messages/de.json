@@ -2,7 +2,7 @@
   "seo": {
     "title": "GOLF AL MAR — Sonnenschutz, Magic Grip & Gelenkpflege",
     "titleTemplate": "%s | GOLF AL MAR",
-    "description": "Premium-Golfzubehör: Sport-Sonnenschutz, Magic Golf Grip für sicheren Halt bei jedem Wetter und DOLO Gelenk- & Muskelpflege. Gemacht, um dein Spiel zu verbessern.",
+    "description": "Premium-Ausrüstung für Golfer: Sport-Sonnenschutz, Magic Grip für jedes Wetter, DOLO Gelenk- & Muskelpflege und Longevity Support Tagesformel. Für besseres Spiel.",
     "ogAlt": "GOLF AL MAR — Performance-Ausrüstung für Golfer"
   },
   "nav": {
@@ -272,7 +272,6 @@
     "privacy": "Datenschutz"
   },
   "legal": {
-    "lastUpdated": "Zuletzt aktualisiert",
-    "imprintPlaceholderNotice": "Platzhalter — finale rechtliche Angaben werden vor dem Live-Gang ergänzt."
+    "lastUpdated": "Zuletzt aktualisiert"
   }
 }

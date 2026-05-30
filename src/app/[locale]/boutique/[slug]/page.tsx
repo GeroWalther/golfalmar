@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { LinkButton } from "@/components/ui/link-button";
 import { QuantityAddToCart } from "@/components/cart/quantity-add-to-cart";
 import { ProductGallery } from "@/components/product/product-gallery";
+import { ProductJsonLd } from "@/components/seo/product-jsonld";
 import { PRODUCTS, formatPriceEUR } from "@/lib/products";
 import { routing } from "@/i18n/routing";
 
@@ -93,6 +94,12 @@ export default async function ProductDetailPage({
 
   return (
     <div className="container-page py-12 sm:py-16">
+      <ProductJsonLd
+        product={product}
+        locale={locale}
+        name={name}
+        description={shortDesc}
+      />
       <Link
         href="/boutique"
         className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-foreground"

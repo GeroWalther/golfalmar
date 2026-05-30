@@ -2,7 +2,7 @@
   "seo": {
     "title": "GOLF AL MAR — Protección solar, Magic Grip y alivio articular",
     "titleTemplate": "%s | GOLF AL MAR",
-    "description": "Accesorios de golf premium: protector solar deportivo, Magic Golf Grip para un agarre seco y firme, y DOLO alivio articular y muscular. Hecho para mejorar tu juego.",
+    "description": "Equipamiento premium para golfistas: protector solar, Magic Grip para cualquier clima, DOLO alivio articular y muscular, y Longevity Support diario. Para mejorar tu juego.",
     "ogAlt": "GOLF AL MAR — equipamiento de rendimiento para golfistas"
   },
   "nav": {
@@ -272,7 +272,6 @@
     "privacy": "Privacidad"
   },
   "legal": {
-    "lastUpdated": "Última actualización",
-    "imprintPlaceholderNotice": "Marcador de posición — los datos legales definitivos se añadirán antes del lanzamiento público."
+    "lastUpdated": "Última actualización"
   }
 }

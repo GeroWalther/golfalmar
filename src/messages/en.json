@@ -2,7 +2,7 @@
   "seo": {
     "title": "GOLF AL MAR — Sun Protection, Magic Grip & Joint Relief",
     "titleTemplate": "%s | GOLF AL MAR",
-    "description": "Premium golf accessories: pro sport sunscreen, Magic Golf Grip for a drier hold in any weather, and DOLO joint & muscle relief. Made to improve your game.",
+    "description": "Premium gear for golfers: sport sunscreen, Magic Grip for any weather, DOLO joint & muscle relief, and Longevity Support daily formula. Built to improve your game.",
     "ogAlt": "GOLF AL MAR — performance gear for golfers"
   },
   "nav": {
@@ -272,7 +272,6 @@
     "privacy": "Privacy"
   },
   "legal": {
-    "lastUpdated": "Last updated",
-    "imprintPlaceholderNotice": "Placeholder — final legal details to be inserted before public launch."
+    "lastUpdated": "Last updated"
   }
 }

@@ -4,6 +4,7 @@ import { listAllSlugsForSitemap } from "@/lib/blog/queries";
 import { PRODUCTS } from "@/lib/products";
 
 const STATIC_ROUTES = ["", "/boutique", "/about", "/blog"] as const;
+const LEGAL_ROUTES = ["/imprint", "/privacy"] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
@@ -14,6 +15,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       changeFrequency: "weekly" as const,
       priority: route === "" ? 1.0 : 0.8,
+    })),
+  );
+
+  const legalEntries: MetadataRoute.Sitemap = LOCALES.flatMap((locale) =>
+    LEGAL_ROUTES.map((route) => ({
+      url: `${SITE_URL}/${locale}${route}`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
     })),
   );
 
@@ -34,5 +44,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...productEntries, ...blogEntries];
+  return [...staticEntries, ...legalEntries, ...productEntries, ...blogEntries];
 }
