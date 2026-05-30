@@ -270,5 +270,9 @@
     "rights": "Alle Rechte vorbehalten.",
     "imprint": "Impressum",
     "privacy": "Datenschutz"
+  },
+  "legal": {
+    "lastUpdated": "Zuletzt aktualisiert",
+    "imprintPlaceholderNotice": "Platzhalter — finale rechtliche Angaben werden vor dem Live-Gang ergänzt."
   }
 }

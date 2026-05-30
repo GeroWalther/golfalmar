@@ -270,5 +270,9 @@
     "rights": "Todos los derechos reservados.",
     "imprint": "Aviso legal",
     "privacy": "Privacidad"
+  },
+  "legal": {
+    "lastUpdated": "Última actualización",
+    "imprintPlaceholderNotice": "Marcador de posición — los datos legales definitivos se añadirán antes del lanzamiento público."
   }
 }

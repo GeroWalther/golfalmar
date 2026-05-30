@@ -75,8 +75,12 @@ export function SiteFooter() {
             © {year} {BUSINESS.name}. {t("rights")}
           </p>
           <div className="flex gap-4">
-            <span className="opacity-60">{t("imprint")}</span>
-            <span className="opacity-60">{t("privacy")}</span>
+            <Link href="/imprint" className="hover:underline">
+              {t("imprint")}
+            </Link>
+            <Link href="/privacy" className="hover:underline">
+              {t("privacy")}
+            </Link>
           </div>
         </div>
       </div>

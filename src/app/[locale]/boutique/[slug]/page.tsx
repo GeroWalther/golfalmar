@@ -129,8 +129,15 @@ export default async function ProductDetailPage({
             </p>
           </div>
 
-          <div className="font-heading text-2xl sm:text-3xl font-medium tracking-tight">
-            {formatPriceEUR(product.priceCents, locale)}
+          <div className="flex items-baseline gap-3">
+            <span className="font-heading text-2xl sm:text-3xl font-medium tracking-tight">
+              {formatPriceEUR(product.priceCents, locale)}
+            </span>
+            {product.size && (
+              <span className="text-sm font-mono uppercase tracking-wider text-muted-foreground">
+                {product.size}
+              </span>
+            )}
           </div>
 
           <QuantityAddToCart productId={product.id} productName={name} />

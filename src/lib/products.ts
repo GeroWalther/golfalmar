@@ -3,6 +3,8 @@ export type Product = {
   slug: string;
   priceCents: number;
   currency: "eur";
+  /** Net content shown on the product detail page (e.g. "100 ml", "60 g"). */
+  size?: string;
   image: string;
   /** Optional additional images shown alongside `image` in the product detail gallery (thumbnail row + main view). */
   gallery?: string[];
@@ -18,6 +20,7 @@ export const PRODUCTS: Product[] = [
     slug: "sport-sunscreen",
     priceCents: 3200,
     currency: "eur",
+    size: "100 ml",
     image: "/images/sunscreenprod.jpg",
     gallery: ["/images/sunscreentexture.jpg"],
   },
@@ -28,14 +31,16 @@ export const PRODUCTS: Product[] = [
     // Revert to 1990 once the order/email/webhook flow is verified.
     priceCents: 1900,
     currency: "eur",
+    size: "30 ml",
     image: "/images/magicgrip-1.jpg",
     gallery: ["/images/magicgrip-2.jpg"],
   },
   {
     id: "dolo-golf",
     slug: "dolo-golf",
-    priceCents: 3900,
+    priceCents: 4900,
     currency: "eur",
+    size: "100 ml",
     image: "/images/dologolf.jpg",
     gallery: ["/images/dologolf-cream.jpg"],
     descriptionBadge: {
@@ -58,6 +63,7 @@ export const PRODUCTS: Product[] = [
     slug: "longevity-support",
     priceCents: 11900,
     currency: "eur",
+    size: "60 g",
     image: "/images/longevity.jpg",
     gallery: ["/images/longevity2.jpg"],
   },

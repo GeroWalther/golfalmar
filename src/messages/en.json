@@ -270,5 +270,9 @@
     "rights": "All rights reserved.",
     "imprint": "Imprint",
     "privacy": "Privacy"
+  },
+  "legal": {
+    "lastUpdated": "Last updated",
+    "imprintPlaceholderNotice": "Placeholder — final legal details to be inserted before public launch."
   }
 }
