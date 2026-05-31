@@ -45,7 +45,14 @@ export default async function AboutPage({
       </section>
 
       <article className="container-page pt-16 sm:pt-24 pb-8 max-w-3xl">
-        <p className="text-xl sm:text-2xl text-foreground/90 leading-relaxed">
+        <section className="space-y-5">
+          <p className="eyebrow">{t("welcomeEyebrow")}</p>
+          <div className="text-xl sm:text-2xl text-foreground/90 leading-relaxed whitespace-pre-line">
+            {t("welcomeBody")}
+          </div>
+        </section>
+
+        <p className="mt-14 text-base sm:text-lg text-muted-foreground leading-relaxed">
           {t("intro")}
         </p>
 
