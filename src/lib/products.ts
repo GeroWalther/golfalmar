@@ -25,17 +25,6 @@ export const PRODUCTS: Product[] = [
     gallery: ["/images/sunscreentexture.jpg"],
   },
   {
-    id: "magic-golf-grip",
-    slug: "magic-golf-grip",
-    // TEMPORARY: dropped from 1990 to 100 for live end-to-end checkout test.
-    // Revert to 1990 once the order/email/webhook flow is verified.
-    priceCents: 1900,
-    currency: "eur",
-    size: "30 ml",
-    image: "/images/magicgrip-1.jpg",
-    gallery: ["/images/magicgrip-2.jpg"],
-  },
-  {
     id: "dolo-golf",
     slug: "dolo-golf",
     priceCents: 4900,
@@ -57,6 +46,17 @@ export const PRODUCTS: Product[] = [
         alt: "DOLO Golf — targeted relief where golfers need it most",
       },
     ],
+  },
+  {
+    id: "magic-golf-grip",
+    slug: "magic-golf-grip",
+    // TEMPORARY: dropped from 1990 to 100 for live end-to-end checkout test.
+    // Revert to 1990 once the order/email/webhook flow is verified.
+    priceCents: 1900,
+    currency: "eur",
+    size: "30 ml",
+    image: "/images/magicgrip-1.jpg",
+    gallery: ["/images/magicgrip-2.jpg"],
   },
   {
     id: "longevity-support",
