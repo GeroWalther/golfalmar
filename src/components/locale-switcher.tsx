@@ -3,7 +3,6 @@
 import { useTransition } from "react";
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
-import { Globe } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,6 +15,12 @@ const LOCALE_LABELS: Record<Locale, string> = {
   en: "EN",
   de: "DE",
   es: "ES",
+};
+
+const LOCALE_FLAGS: Record<Locale, string> = {
+  en: "🇬🇧",
+  de: "🇩🇪",
+  es: "🇪🇸",
 };
 
 export function LocaleSwitcher() {
@@ -37,7 +42,7 @@ export function LocaleSwitcher() {
         className="inline-flex h-9 items-center gap-1.5 rounded-md border border-border px-2.5 font-mono text-xs uppercase tracking-wider hover:bg-muted disabled:opacity-50"
         disabled={isPending}
       >
-        <Globe className="size-3.5" />
+        <span className="text-sm leading-none">{LOCALE_FLAGS[locale]}</span>
         {LOCALE_LABELS[locale]}
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-[8rem]">
@@ -45,8 +50,9 @@ export function LocaleSwitcher() {
           <DropdownMenuItem
             key={l}
             onClick={() => onSelect(l)}
-            className="font-mono text-xs uppercase tracking-wider cursor-pointer"
+            className="font-mono text-xs uppercase tracking-wider cursor-pointer gap-1.5"
           >
+            <span className="text-sm leading-none">{LOCALE_FLAGS[l]}</span>
             {LOCALE_LABELS[l]}
             {l === locale && (
               <span className="ml-auto inline-block size-2 rounded-full bg-foreground" />
