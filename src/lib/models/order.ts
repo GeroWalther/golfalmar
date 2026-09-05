@@ -1,4 +1,5 @@
 import { Schema, model, models, type InferSchemaType, type Model } from "mongoose";
+import { LOCALES } from "../constants";
 
 const ShippingAddressSchema = new Schema(
   {
@@ -33,7 +34,7 @@ const OrderSchema = new Schema(
     amountTotalCents: { type: Number, required: true },
     shippingCents: { type: Number, default: 0 },
     currency: { type: String, default: "eur" },
-    locale: { type: String, enum: ["en", "de", "es"], default: "en" },
+    locale: { type: String, enum: [...LOCALES], default: "en" },
     status: {
       type: String,
       enum: ["paid", "fulfilled", "cancelled", "refunded"],

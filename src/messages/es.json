@@ -50,7 +50,16 @@
     "secondaryCta": "Nuestra historia"
   },
   "marquee": {
-    "items": ["Protege tu piel", "Agarra el juego", "GOLF AL MAR", "DOLO Golf alivio articular y muscular", "Desde 2013", "Hecho para golfistas", "No graso", "Antideslizante"]
+    "items": [
+      "Protege tu piel",
+      "Agarra el juego",
+      "GOLF AL MAR",
+      "DOLO Golf alivio articular y muscular",
+      "Desde 2013",
+      "Hecho para golfistas",
+      "No graso",
+      "Antideslizante"
+    ]
   },
   "brand": {
     "eyebrow": "La marca",
@@ -210,37 +219,38 @@
   "about": {
     "title": "Sobre GOLF AL MAR",
     "eyebrow": "Nuestra historia",
-    "welcomeEyebrow": "Nuestra misión",
-    "welcomeBody": "GOLF AL MAR fue fundada por golfistas profesionales y amateurs que entienden las necesidades y los desafíos únicos del juego.\n\nNuestra misión es desarrollar productos premium diseñados específicamente para golfistas, para apoyar el rendimiento, la comodidad, la recuperación y el bienestar general — dentro y fuera del campo.\n\nDesde la protección solar y la mejora del agarre hasta el apoyo articular, el alivio del dolor y la nutrición enfocada en la longevidad, cada producto GOLF AL MAR se crea con un único objetivo: ayudar a los golfistas a rendir al máximo y disfrutar del juego durante años.\n\nEn GOLF AL MAR combinamos golf, salud y longevidad en un estilo de vida único dedicado al rendimiento, el bienestar y el envejecimiento saludable.",
-    "intro": "El mundo del golf está creciendo — y GOLF AL MAR forma parte de él. Diseñamos equipamiento esencial para la forma en que los golfistas realmente juegan: largas jornadas bajo el sol, swings repetidos hasta que el cuerpo los recuerda, manos que pierden el agarre cuando las condiciones cambian. Nuestros productos están construidos en torno a lo que un golfista necesita desde el primer tee hasta el último putt.",
-    "pullQuote": "El equipamiento debe desaparecer. La ronda debe quedar en la memoria.",
-    "originTitle": "Nacida de una necesidad en el campo",
-    "originBody": "GOLF AL MAR se fundó en 2013, a partir de una observación simple en un campo del Mediterráneo: el equipamiento diseñado para cómo realmente vive un golfista aún no existía. Protectores solares que escurrían a los ojos. Potenciadores de grip que se transferían al guante. Productos de recuperación pensados para deportistas en general, no para las exigencias específicas del swing.\n\nEmpezamos con un mandato claro — desarrollar productos de golf excepcionales y específicos, que mejoren genuinamente la experiencia y te permitan disfrutar aún más del juego. Cada fórmula se refina con la opinión de jugadores amateurs y profesionales, y se prueba donde importa: en el campo, con el calor, con la lluvia, en el hoyo 18.",
-    "missionTitle": "Proteger, rendir, disfrutar",
-    "missionBody": "Hay 87,5 millones de golfistas en el mundo — y la mayoría no tiene una protección solar adecuada. Las cifras de cáncer de piel en nuestra comunidad están subiendo, no bajando. Cinco horas por ronda, a menudo en la franja de mayor radiación UV del día, dejan narices quemadas, piel fotoenvejecida y un coste silencioso a largo plazo del que ningún tee sheet te advierte.\n\nPara eso diseñamos Golfers Pro Sunscreen. SPF 30 de grado farmacéutico, bloqueando el 96,6 % de UVB, en una fórmula no grasa, antideslizante, que sobrevive a cómo se mueve realmente un golfista. Una sola aplicación dura una ronda entera. La protección dura toda la vida.",
+    "welcomeEyebrow": "..... made to improve your game",
+    "welcomeBody": "GOLF AL MAR nació de la pasión por el golf y de una idea sencilla:\n¿Por qué existe equipamiento especializado para casi cualquier situación en el campo, pero tan pocos productos pensados para las necesidades particulares del golfista?\n\nUna vuelta exige mucho más que un buen swing. Horas de movimiento, sol y calor, condiciones meteorológicas cambiantes y la carga repetida sobre manos, músculos y articulaciones forman parte del juego.\n\nJusto ahí empieza GOLF AL MAR.",
+    "intro": "Desarrollamos productos premium especializados para golfistas con un objetivo: apoyar el rendimiento, la protección, la recuperación y el bienestar dentro y fuera del campo.",
+    "pullQuote": "Lo que lleva el nombre GOLF AL MAR tiene que aportar un valor real al juego.",
+    "originTitle": "Pensado por golfistas. Creado para el juego.",
+    "originBody": "Nuestras ideas de producto no nacen solo en un escritorio. Nacen en el campo.\n\nEn el primer tee. Tras varias horas bajo el sol. Cuando las manos se humedecen. Cuando los músculos y las articulaciones acusan una vuelta larga. Y cuando a la mañana siguiente quieres volver a jugar.\n\nObservamos lo que los golfistas necesitan de verdad y creamos productos con un propósito concreto.",
+    "missionTitle": "Rendimiento. Protección. Recuperación.",
+    "missionBody": "Para nosotros, jugar mejor no significa solo bajar el hándicap.\n\nSignifica sentirse bien durante toda la vuelta. Proteger la piel de la radiación solar intensa. Mantener un agarre seguro. Cuidar músculos y articulaciones. Recuperarse mejor después de jugar y disfrutar del golf durante el mayor tiempo posible.\n\nPor eso miramos al golfista de forma integral: desde el primer tee hasta el último putt, y mucho más allá de la vuelta.",
+    "valuesEyebrow": "Nuestros principios",
     "valuesTitle": "Lo que defendemos",
-    "valuesIntro": "Tres principios guían cada fórmula que sacamos al mercado.",
+    "valuesIntro": "Tres principios guían cada desarrollo que llevamos al campo.",
     "values": [
       {
         "title": "Rendimiento",
-        "body": "Cada producto se mide frente a las exigencias reales del juego — el calor, la humedad, la rotación, la larga caminata. Si no funciona en el hoyo 18, no se vende."
+        "body": "Un agarre seguro, la cabeza despejada y un cuerpo que aguanta 18 hoyos. Nuestros productos están hechos para acompañar el juego allí donde realmente se juega."
       },
       {
         "title": "Protección",
-        "body": "Hacemos productos para el juego largo. Reducir hoy la exposición UV, aliviar ahora la inflamación, preservar la función articular para las décadas de golf que aún quedan por jugar."
+        "body": "Horas de sol, viento y tiempo cambiante forman parte de cada vuelta. Protegemos piel, manos y articulaciones justo de la carga que impone el juego."
       },
       {
-        "title": "Placer",
-        "body": "El equipamiento debe desaparecer. La ronda debe quedar en la memoria. Nuestro trabajo es eliminar la fricción para que tú te concentres en el swing — y en la compañía con la que lo juegas."
+        "title": "Recuperación",
+        "body": "Después de la vuelta empieza la siguiente. Ayudamos a que músculos y articulaciones se recuperen — para poder volver a jugar a la mañana siguiente."
       }
     ],
-    "productsTitle": "De la élite, para todos",
-    "productsBody": "Cuando la ronda se complica — humedad, calor, sudor, lluvia repentina en los últimos hoyos — incluso el mejor grip empieza a fallar. Por eso construimos Golfers Pro Magic Grip: una fórmula de rendimiento de manos diseñada con precisión, inspirada en amateurs de élite y profesionales del tour. Devuelve el contacto que necesitas para hacer swing con confianza.\n\nY como dieciocho hoyos son un maratón para el cuerpo, añadimos DOLO Golf — una crema antiinflamatoria botánica para las articulaciones y los músculos que más sufren los golfistas. Tres productos, una creencia: el equipamiento adecuado te permite jugar tu mejor golf, durante más tiempo.",
-    "craftTitle": "Cómo hacemos las cosas",
-    "craftBody": "No perseguimos tendencias. Construimos despacio, refinamos constantemente y solo lanzamos cuando algo mejora de verdad lo que ya existe. Cada fórmula pasa por la opinión de profesionales, pruebas reales en campo y una pregunta final: ¿pondría yo esto en mi propia bolsa el próximo fin de semana?\n\nSi la respuesta es sí, se gana el nombre GOLF AL MAR. Si no, vuelve al laboratorio.",
-    "noteTitle": "Una nota del equipo",
-    "noteBody": "GOLF AL MAR se construye sobre una promesa simple: el equipamiento debe desaparecer, la ronda debe quedar en la memoria. Sol en la piel, palo en las manos, el resto del grupo unos pasos por delante. Esperamos que juegues más, te protejas mejor y agarres con más firmeza — y que nuestros productos marquen una diferencia pequeña pero real en el camino.",
-    "noteSignoff": "— El equipo detrás de GOLF AL MAR"
+    "productsTitle": "Para el juego largo",
+    "productsBody": "El golf es uno de los pocos deportes que puede acompañar a una persona durante décadas.\n\nEso es precisamente lo que nos fascina.\n\nPor eso nuestra filosofía no mira solo a la próxima vuelta. Creamos productos que acompañan al golfista para mantenerse activo, móvil y en forma, y disfrutar de su juego el mayor tiempo posible.\n\nEso es lo que entendemos por el juego largo.",
+    "craftTitle": "Nuestra exigencia",
+    "craftBody": "Combinamos ingredientes naturales premiados y de alta calidad, un desarrollo de producto moderno y la experiencia práctica de los golfistas.\n\nCada desarrollo empieza con una pregunta sencilla: ¿qué necesita realmente un golfista?\n\nY termina con una segunda: ¿nos llevaríamos este producto al campo?\n\nSolo cuando la respuesta convence, encaja con GOLF AL MAR.",
+    "noteTitle": "Más que equipamiento",
+    "noteBody": "El mejor momento del golf llega cuando no tienes que pensar en tu equipamiento.\n\nSientes el palo.\nVes la calle.\nTe concentras en el siguiente golpe.\nY disfrutas de las personas con las que compartes la vuelta.\n\nEl equipamiento debe desaparecer.\nLa vuelta debe quedar en la memoria.\n\nEso es GOLF AL MAR.",
+    "noteSignoff": "GOLF AL MAR ..... made to improve your game"
   },
   "cart": {
     "title": "Tu carrito",

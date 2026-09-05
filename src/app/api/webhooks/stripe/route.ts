@@ -5,6 +5,7 @@ import { connectDB } from "@/lib/db";
 import { Order } from "@/lib/models/order";
 import { sendOrderConfirmation } from "@/lib/emails";
 import { getProduct } from "@/lib/products";
+import { LOCALES } from "@/lib/constants";
 
 export const runtime = "nodejs";
 
@@ -84,7 +85,7 @@ export async function POST(req: Request) {
     shippingCents: session.shipping_cost?.amount_total ?? 0,
     currency: session.currency ?? "eur",
     locale:
-      (["en", "de", "es"] as const).find(
+      LOCALES.find(
         (l) => l === session.metadata?.locale,
       ) ?? "en",
     status: "paid",

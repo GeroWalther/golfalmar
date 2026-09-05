@@ -50,7 +50,15 @@
     "secondaryCta": "Our story"
   },
   "marquee": {
-    "items": ["Protect your skin", "Grip the game", "DOLO GOLF Joint & muscle relief", "Since 2013", "Made for golfers", "Non-greasy", "Non-slip"]
+    "items": [
+      "Protect your skin",
+      "Grip the game",
+      "DOLO GOLF Joint & muscle relief",
+      "Since 2013",
+      "Made for golfers",
+      "Non-greasy",
+      "Non-slip"
+    ]
   },
   "brand": {
     "eyebrow": "The brand",
@@ -210,37 +218,38 @@
   "about": {
     "title": "About GOLF AL MAR",
     "eyebrow": "Our story",
-    "welcomeEyebrow": "Our mission",
-    "welcomeBody": "GOLF AL MAR was founded by professional and amateur golfers who understand the unique needs and challenges of the game.\n\nOur mission is to develop premium products specifically designed for golfers to support performance, comfort, recovery, and overall well-being — both on and off the course.\n\nFrom sun protection and grip enhancement to joint support, pain relief, and longevity-focused nutrition, every GOLF AL MAR product is created with one goal in mind: helping golfers perform at their best and enjoy the game for years to come.\n\nAt GOLF AL MAR, we combine golf, health, and longevity into a unique lifestyle dedicated to performance, well-being, and healthy aging.",
-    "intro": "The world of golf is growing — and GOLF AL MAR is part of it. We design essential gear for the way golfers actually play: long days under the sun, swings repeated until the body remembers, hands that lose their grip when conditions turn. Our products are built around what golfers need from the first tee to the final putt.",
-    "pullQuote": "The gear should disappear. The round should be remembered.",
-    "originTitle": "Born from a need on the course",
-    "originBody": "GOLF AL MAR was founded in 2013, born out of a simple observation made on a Mediterranean course: the gear designed for the way golfers actually live wasn't there yet. Sunscreens that ran into eyes. Grip enhancers that transferred onto gloves. Recovery products built for general athletes, not for the specific demands of the swing.\n\nWe started with a clear mandate — to develop exceptional, golf-first products that genuinely improve the experience and let you enjoy the game even more. Every formula is refined with input from amateur and professional players, then tested where it matters: on the course, in the heat, in the rain, on the eighteenth hole.",
-    "missionTitle": "Protect, perform, enjoy",
-    "missionBody": "There are 87.5 million golfers worldwide — and most have no adequate protection from the sun. The numbers around skin cancer in our community are rising, not falling. Five hours per round, often during the strongest UV window of the day, leaves burned noses, photo-aged skin, and a quiet long-term cost that nobody's tee sheet warns you about.\n\nWe designed Golfers Pro Sunscreen exactly for this. Pharmaceutical-grade SPF 30, blocking 96.6% of UVB, refined to a non-greasy, non-slip formula that survives the way golfers actually move. One application lasts a full round. The protection lasts a lifetime.",
+    "welcomeEyebrow": "..... made to improve your game",
+    "welcomeBody": "GOLF AL MAR grew out of a passion for golf and one simple thought:\nWhy is there specialised equipment for almost every situation on the course, yet so few products built around the particular needs of the golfer?\n\nA round asks for more than a good swing. Hours of movement, sun and heat, changing weather, and the repeated load on hands, muscles and joints are all part of the game.\n\nThat is exactly where GOLF AL MAR begins.",
+    "intro": "We develop specialised premium products for golfers, with one aim: to support performance, protection, recovery and well-being on and off the course.",
+    "pullQuote": "Whatever carries the GOLF AL MAR name has to add real value to the game.",
+    "originTitle": "Thought up by golfers. Built for the game.",
+    "originBody": "Our product ideas don't come from a desk alone. They come from the course.\n\nOn the first tee. After hours in the sun. When hands turn damp. When muscles and joints have taken a long round. And when you want to play again the next morning.\n\nWe watch what golfers actually need, and build products that serve a concrete purpose.",
+    "missionTitle": "Performance. Protection. Recovery.",
+    "missionBody": "For us, a better game doesn't only mean a lower handicap.\n\nIt means feeling good through an entire round. Protecting your skin from intense sun. Keeping a secure grip. Supporting muscles and joints. Recovering better afterwards, and enjoying golf for as long as possible.\n\nSo we look at the golfer as a whole — from the first tee to the last putt, and far beyond the round.",
+    "valuesEyebrow": "Our principles",
     "valuesTitle": "What we stand for",
-    "valuesIntro": "Three principles guide every formula we ship.",
+    "valuesIntro": "Three principles guide every product we bring to the course.",
     "values": [
       {
         "title": "Performance",
-        "body": "Every product is benchmarked against the actual demands of the game — the heat, the humidity, the rotation, the long walk. If it doesn't work on the 18th hole, it doesn't ship."
+        "body": "A secure grip, a clear head and a body that stays with you for 18 holes. Our products are built to support the game where it is actually played."
       },
       {
         "title": "Protection",
-        "body": "We make products for the long game. Reducing UV exposure today, easing inflammation now, preserving joint function for the decades of golf still to come."
+        "body": "Hours of sun, wind and changing weather are part of every round. We protect skin, hands and joints from exactly the strain the game brings."
       },
       {
-        "title": "Pleasure",
-        "body": "The gear should disappear. The round should be remembered. Our job is to remove the friction so you can focus on the swing — and the company you're playing it with."
+        "title": "Recovery",
+        "body": "After the round is before the round. We help muscles and joints recover — so you can play again the next morning."
       }
     ],
-    "productsTitle": "From the elite, for everyone",
-    "productsBody": "When the round turns against you — humidity, heat, sweat, sudden rain on the back nine — even the best grip starts to slip. So we built Golfers Pro Magic Grip: a precision-engineered hand performance formula, inspired by elite amateurs and tour professionals. It restores the contact you need to swing with confidence.\n\nAnd because eighteen holes is a marathon for the body, we added DOLO Golf — a botanical anti-inflammatory cream for the joints and muscles golfers stress most. Three products, one belief: the right gear lets you play your best, longer.",
-    "craftTitle": "The way we make things",
-    "craftBody": "We don't chase trends. We build slowly, refine constantly, and ship only when something genuinely improves on what already exists. Every formula goes through professional input, real-course testing, and a final question: would I put this in my own bag for next weekend?\n\nIf the answer is yes, it earns the GOLF AL MAR name. If not, it goes back to the lab.",
-    "noteTitle": "A note from the team",
-    "noteBody": "GOLF AL MAR is built on a simple promise: the gear should disappear, the round should be remembered. Sun on your skin, club in your hands, the rest of your foursome a few paces ahead. We hope you play longer, protect more, and grip stronger — and we hope our products make a small but real difference along the way.",
-    "noteSignoff": "— The team behind GOLF AL MAR"
+    "productsTitle": "For the long game",
+    "productsBody": "Golf is one of the few sports that can stay with people for decades.\n\nThat is precisely what fascinates us.\n\nOur philosophy is therefore not aimed only at the next round. We build products that help golfers stay active, mobile and capable, and enjoy their game for as long as possible.\n\nThat is what we mean by the long game.",
+    "craftTitle": "Our standard",
+    "craftBody": "We combine selected high-quality natural award-winning ingredients, modern product development and the practical experience of golfers.\n\nEvery development starts with a simple question: what does a golfer really need?\n\nAnd it ends with a second one: would we carry this product in our own bag?\n\nOnly when the answer convinces does it belong to GOLF AL MAR.",
+    "noteTitle": "More than equipment",
+    "noteBody": "The best moment in golf is the one where you don't have to think about your equipment.\n\nYou feel the club.\nYou see the fairway.\nYou focus on the next shot.\nAnd you enjoy the people you share the round with.\n\nThe equipment should disappear.\nThe round should be remembered.\n\nThat is GOLF AL MAR.",
+    "noteSignoff": "GOLF AL MAR ..... made to improve your game"
   },
   "cart": {
     "title": "Your cart",

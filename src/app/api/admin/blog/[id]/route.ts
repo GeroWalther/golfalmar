@@ -6,6 +6,7 @@ import { BlogPost } from "@/lib/models/blog-post";
 import { sanitizeBlogHtml } from "@/lib/blog/sanitize";
 import { slugify, autoExcerpt } from "@/lib/blog/utils";
 import { broadcastJournalPost } from "@/lib/journal-broadcast";
+import { LOCALES } from "@/lib/constants";
 
 export const runtime = "nodejs";
 
@@ -17,7 +18,7 @@ const Body = z.object({
   coverImageAlt: z.string().max(200).optional(),
   contentHtml: z.string().min(1).optional(),
   author: z.string().max(120).optional(),
-  locale: z.enum(["en", "de", "es"]).optional(),
+  locale: z.enum(LOCALES).optional(),
   status: z.enum(["draft", "published"]).optional(),
   tags: z.array(z.string().max(40)).max(20).optional(),
 });

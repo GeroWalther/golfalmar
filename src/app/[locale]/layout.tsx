@@ -10,7 +10,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { CartProvider } from "@/components/cart/cart-provider";
 import { CartDrawer } from "@/components/cart/cart-drawer";
 import { routing } from "@/i18n/routing";
-import { SEO_KEYWORDS, SITE_URL } from "@/lib/constants";
+import { LOCALE_META, SEO_KEYWORDS, SITE_URL } from "@/lib/constants";
 import "../globals.css";
 
 const inter = Inter({
@@ -74,11 +74,10 @@ export async function generateMetadata({
       title,
       description,
       siteName: "GOLF AL MAR",
-      locale:
-        locale === "en" ? "en_US" : locale === "de" ? "de_DE" : "es_ES",
+      locale: LOCALE_META[locale].og,
       alternateLocale: routing.locales
         .filter((l) => l !== locale)
-        .map((l) => (l === "en" ? "en_US" : l === "de" ? "de_DE" : "es_ES")),
+        .map((l) => LOCALE_META[l].og),
       images: [
         {
           url: "/opengraph-image",

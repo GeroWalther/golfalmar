@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/lib/constants";
-import { SITE_URL } from "@/lib/constants";
+import { LOCALE_META, SITE_URL } from "@/lib/constants";
 import { PrivacyContent } from "@/lib/legal/privacy-content";
 
 // Update when the policy text materially changes.
@@ -31,7 +31,7 @@ export default async function PrivacyPage({
   const tFooter = await getTranslations({ locale, namespace: "footer" });
   const tLegal = await getTranslations({ locale, namespace: "legal" });
 
-  const dateLocale = locale === "de" ? "de-DE" : locale === "es" ? "es-ES" : "en-GB";
+  const dateLocale = LOCALE_META[locale as Locale].date;
   const lastUpdated = new Intl.DateTimeFormat(dateLocale, {
     day: "numeric",
     month: "long",

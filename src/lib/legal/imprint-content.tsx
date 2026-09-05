@@ -142,8 +142,84 @@ function ImprintEs() {
   );
 }
 
+function ImprintZh() {
+  return (
+    <>
+      <h2>经营者</h2>
+      <AddressBlock />
+
+      <h2>联系方式</h2>
+      <p>
+        电子邮箱：<a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+      </p>
+
+      <h2>增值税识别号</h2>
+      <p>
+        欧盟增值税号 / NIF：<strong>{VAT_ID}</strong>
+      </p>
+
+      <h2>欧盟在线争议解决</h2>
+      <p>
+        欧盟委员会提供在线争议解决平台（ODR）：{" "}
+        <a
+          href="https://ec.europa.eu/consumers/odr/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          https://ec.europa.eu/consumers/odr/
+        </a>
+        。我们的电子邮箱地址见上文。
+      </p>
+
+      <h2>消费者争议解决</h2>
+      <p>
+        我们没有意愿也没有义务参与消费者仲裁机构主持的争议解决程序。
+      </p>
+    </>
+  );
+}
+
+function ImprintJa() {
+  return (
+    <>
+      <h2>事業者</h2>
+      <AddressBlock />
+
+      <h2>お問い合わせ</h2>
+      <p>
+        メール：<a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+      </p>
+
+      <h2>付加価値税（VAT）登録番号</h2>
+      <p>
+        EU VAT / NIF：<strong>{VAT_ID}</strong>
+      </p>
+
+      <h2>EU オンライン紛争解決</h2>
+      <p>
+        欧州委員会はオンライン紛争解決（ODR）のためのプラットフォームを提供しています：{" "}
+        <a
+          href="https://ec.europa.eu/consumers/odr/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          https://ec.europa.eu/consumers/odr/
+        </a>
+        。当社のメールアドレスは上記のとおりです。
+      </p>
+
+      <h2>消費者紛争の解決</h2>
+      <p>
+        当社は消費者仲裁機関における紛争解決手続きに参加する意思も義務もありません。
+      </p>
+    </>
+  );
+}
+
 export function ImprintContent({ locale }: { locale: Locale }) {
   if (locale === "de") return <ImprintDe />;
   if (locale === "es") return <ImprintEs />;
+  if (locale === "zh") return <ImprintZh />;
+  if (locale === "ja") return <ImprintJa />;
   return <ImprintEn />;
 }

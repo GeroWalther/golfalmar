@@ -2,6 +2,29 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+/**
+ * Renders a translated body string as real paragraphs: blank lines start a new
+ * paragraph, single newlines stay as line breaks inside one. Keeps the long
+ * about-page copy readable instead of one wall of pre-wrapped text.
+ */
+function Paragraphs({
+  text,
+  className,
+}: {
+  text: string;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      {text.split("\n\n").map((paragraph, i) => (
+        <p key={i} className="whitespace-pre-line [&:not(:first-child)]:mt-5">
+          {paragraph}
+        </p>
+      ))}
+    </div>
+  );
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -44,41 +67,46 @@ export default async function AboutPage({
         </div>
       </section>
 
-      <article className="container-page pt-16 sm:pt-24 pb-8 max-w-3xl">
-        <section className="space-y-5">
-          <p className="eyebrow">{t("welcomeEyebrow")}</p>
-          <div className="text-xl sm:text-2xl text-foreground/90 leading-relaxed whitespace-pre-line">
-            {t("welcomeBody")}
-          </div>
-        </section>
+      <article className="container-page pt-16 sm:pt-24 pb-8">
+        <div className="max-w-[46rem]">
+          <section className="space-y-5">
+            <p className="eyebrow">{t("welcomeEyebrow")}</p>
+            <Paragraphs
+              text={t("welcomeBody")}
+              className="text-lg sm:text-xl text-foreground/90 leading-relaxed"
+            />
+          </section>
 
-        <p className="mt-14 text-base sm:text-lg text-muted-foreground leading-relaxed">
-          {t("intro")}
-        </p>
-
-        <blockquote className="mt-12 sm:mt-16 border-l-4 border-fairway pl-6 sm:pl-8 py-2">
-          <p className="font-heading text-2xl sm:text-3xl font-light tracking-[-0.01em] text-fairway leading-snug italic">
-            &ldquo;{t("pullQuote")}&rdquo;
+          <p className="mt-14 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            {t("intro")}
           </p>
-        </blockquote>
 
-        <section className="mt-16 space-y-4">
-          <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
-            {t("originTitle")}
-          </h2>
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-            {t("originBody")}
-          </p>
-        </section>
+          <blockquote className="mt-12 sm:mt-16 border-l-4 border-fairway pl-6 sm:pl-8 py-2">
+            <p className="font-heading text-2xl sm:text-3xl font-light tracking-[-0.01em] text-fairway leading-snug italic">
+              &ldquo;{t("pullQuote")}&rdquo;
+            </p>
+          </blockquote>
+
+          <section className="mt-16 space-y-4">
+            <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
+              {t("originTitle")}
+            </h2>
+            <Paragraphs
+              text={t("originBody")}
+              className="text-base sm:text-lg text-muted-foreground leading-relaxed"
+            />
+          </section>
+        </div>
 
         <section className="mt-12 grid gap-8 lg:grid-cols-5 items-start">
           <div className="lg:col-span-3 space-y-4">
             <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
               {t("missionTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-              {t("missionBody")}
-            </p>
+            <Paragraphs
+              text={t("missionBody")}
+              className="text-base sm:text-lg text-muted-foreground leading-relaxed"
+            />
           </div>
           <div className="lg:col-span-2 relative aspect-square rounded-md overflow-hidden bg-sand">
             <Image
@@ -96,7 +124,7 @@ export default async function AboutPage({
       <section className="border-y border-border bg-sand/40 mt-16">
         <div className="container-page py-20 sm:py-24">
           <div className="max-w-3xl mb-12 space-y-3">
-            <p className="eyebrow">Our principles</p>
+            <p className="eyebrow">{t("valuesEyebrow")}</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold uppercase tracking-tight">
               {t("valuesTitle")}
             </h2>
@@ -124,36 +152,41 @@ export default async function AboutPage({
         </div>
       </section>
 
-      <article className="container-page pt-16 sm:pt-20 pb-8 max-w-3xl">
-        <section className="space-y-4">
-          <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
-            {t("productsTitle")}
-          </h2>
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-            {t("productsBody")}
-          </p>
-        </section>
+      <article className="container-page pt-16 sm:pt-20 pb-8">
+        <div className="max-w-[46rem]">
+          <section className="space-y-4">
+            <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
+              {t("productsTitle")}
+            </h2>
+            <Paragraphs
+              text={t("productsBody")}
+              className="text-base sm:text-lg text-muted-foreground leading-relaxed"
+            />
+          </section>
 
-        <section className="mt-12 space-y-4">
-          <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
-            {t("craftTitle")}
-          </h2>
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-            {t("craftBody")}
-          </p>
-        </section>
+          <section className="mt-12 space-y-4">
+            <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
+              {t("craftTitle")}
+            </h2>
+            <Paragraphs
+              text={t("craftBody")}
+              className="text-base sm:text-lg text-muted-foreground leading-relaxed"
+            />
+          </section>
 
-        <section className="mt-16 rounded-md border border-border bg-card p-8 sm:p-10 space-y-4">
-          <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
-            {t("noteTitle")}
-          </h2>
-          <p className="text-base sm:text-lg text-foreground/85 leading-relaxed">
-            {t("noteBody")}
-          </p>
-          <p className="font-serif italic text-sm sm:text-base text-fairway pt-2">
-            {t("noteSignoff")}
-          </p>
-        </section>
+          <section className="mt-16 rounded-md border border-border bg-card p-8 sm:p-10 space-y-4">
+            <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
+              {t("noteTitle")}
+            </h2>
+            <Paragraphs
+              text={t("noteBody")}
+              className="text-base sm:text-lg text-foreground/85 leading-relaxed"
+            />
+            <p className="font-serif italic text-sm sm:text-base text-foreground pt-2">
+              {t("noteSignoff")}
+            </p>
+          </section>
+        </div>
       </article>
 
       {/* Closing crest with green fade rising from below — like grass. Sits flush with the footer (negates SiteFooter's mt-24). */}

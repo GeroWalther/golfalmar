@@ -1,5 +1,6 @@
 import { connectDB } from "@/lib/db";
 import { BlogPost, type BlogPostDoc } from "@/lib/models/blog-post";
+import { type Locale } from "../constants";
 
 export type PublicPost = {
   _id: string;
@@ -45,7 +46,7 @@ export async function listPublishedPosts(
   }
   const query = BlogPost.find({
     status: "published",
-    locale: locale as "en" | "de" | "es",
+    locale: locale as Locale,
   }).sort({ publishedAt: -1, createdAt: -1 });
   if (limit) query.limit(limit);
   const docs = await query.lean<BlogPostDoc[]>();
@@ -65,7 +66,7 @@ export async function getPublishedPostBySlug(
   const doc = await BlogPost.findOne({
     slug,
     status: "published",
-    locale: locale as "en" | "de" | "es",
+    locale: locale as Locale,
   }).lean();
   return doc ? toPublic(doc as BlogPostDoc) : null;
 }

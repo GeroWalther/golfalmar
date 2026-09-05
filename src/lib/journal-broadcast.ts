@@ -1,7 +1,7 @@
 import { getResend, FROM_EMAIL } from "./resend";
 import { connectDB } from "./db";
 import { NewsletterSubscriber } from "./models/newsletter-subscriber";
-import { BUSINESS, SITE_URL } from "./constants";
+import { BUSINESS, SITE_URL, type Locale } from "./constants";
 
 function escapeHtml(s: string): string {
   return s
@@ -16,6 +16,8 @@ const SUBJECT_BY_LOCALE: Record<string, (title: string) => string> = {
   en: (t) => `New from the GOLF AL MAR journal — ${t}`,
   de: (t) => `Neu im GOLF AL MAR Journal — ${t}`,
   es: (t) => `Nuevo en el journal de GOLF AL MAR — ${t}`,
+  zh: (t) => `GOLF AL MAR Journal 新文章 — ${t}`,
+  ja: (t) => `GOLF AL MAR ジャーナルの新着 — ${t}`,
 };
 
 const COPY_BY_LOCALE: Record<
@@ -39,6 +41,18 @@ const COPY_BY_LOCALE: Record<
     cta: "Leer el post",
     footer:
       "Recibes esto porque te uniste al journal de GOLF AL MAR. Responde para darte de baja.",
+  },
+  zh: {
+    eyebrow: "新的 Journal 文章",
+    cta: "阅读全文",
+    footer:
+      "您收到这封邮件是因为您订阅了 GOLF AL MAR Journal。回复此邮件即可退订。",
+  },
+  ja: {
+    eyebrow: "新しいジャーナル記事",
+    cta: "記事を読む",
+    footer:
+      "GOLF AL MAR ジャーナルにご登録いただいたため、このメールをお送りしています。配信停止はご返信ください。",
   },
 };
 
@@ -124,7 +138,7 @@ export async function broadcastJournalPost(post: Post): Promise<{
   await connectDB();
   const subs = await NewsletterSubscriber.find({
     status: "subscribed",
-    locale: post.locale as "en" | "de" | "es",
+    locale: post.locale as Locale,
   })
     .select("email")
     .lean<{ email: string }[]>();

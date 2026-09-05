@@ -15,7 +15,7 @@ export function BrandStorySection() {
         </div>
         <div className="lg:col-span-5 order-1 lg:order-2 relative aspect-square rounded-md overflow-hidden bg-sand">
           <Image
-            src="/images/geroAI.jpg"
+            src="/images/playerGeroDriver.jpg"
             alt="Gero — GOLF AL MAR founder"
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"

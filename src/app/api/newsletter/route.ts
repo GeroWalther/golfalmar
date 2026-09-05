@@ -4,13 +4,14 @@ import { connectDB } from "@/lib/db";
 import { NewsletterSubscriber } from "@/lib/models/newsletter-subscriber";
 import { createSingleUsePromoCode } from "@/lib/stripe-coupons";
 import { sendNewsletterWelcomeEmail } from "@/lib/newsletter-emails";
+import { LOCALES } from "@/lib/constants";
 
 export const runtime = "nodejs";
 
 const Body = z.object({
   email: z.string().trim().toLowerCase().email().max(200),
   name: z.string().trim().max(120).optional(),
-  locale: z.enum(["en", "de", "es"]).default("en"),
+  locale: z.enum(LOCALES).default("en"),
   source: z.string().trim().max(60).optional(),
 });
 

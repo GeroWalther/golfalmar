@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
+import type Stripe from "stripe";
 import { z } from "zod";
 import { getStripe } from "@/lib/stripe";
 import { PRODUCTS, getProduct } from "@/lib/products";
 import { clampQty } from "@/lib/cart";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, LOCALES, LOCALE_META, type Locale } from "@/lib/constants";
 
 export const runtime = "nodejs";
 
@@ -17,14 +18,18 @@ const Body = z.object({
     )
     .min(1)
     .max(20),
-  locale: z.enum(["en", "de", "es"]).default("en"),
+  locale: z.enum(LOCALES).default("en"),
 });
 
-const STRIPE_LOCALE_MAP = {
-  en: "en",
-  de: "de",
-  es: "es",
-} as const;
+// Stripe accepts its own locale codes; LOCALE_META carries the mapping so a
+// new site language only has to be declared in one place.
+type StripeCheckoutLocale = NonNullable<
+  Parameters<Stripe["checkout"]["sessions"]["create"]>[0]
+>["locale"];
+
+const STRIPE_LOCALE_MAP = Object.fromEntries(
+  LOCALES.map((l) => [l, LOCALE_META[l].stripe]),
+) as Record<Locale, StripeCheckoutLocale>;
 
 export async function POST(req: Request) {
   let parsed;

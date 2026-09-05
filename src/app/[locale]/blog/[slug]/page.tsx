@@ -8,7 +8,7 @@ import { Link } from "@/i18n/navigation";
 import { BlogPostJsonLd } from "@/components/seo/blog-post-jsonld";
 import { getPublishedPostBySlug, listPublishedPosts } from "@/lib/blog/queries";
 import { readingMinutes } from "@/lib/blog/utils";
-import { SITE_URL } from "@/lib/constants";
+import { LOCALE_META, LOCALES, SITE_URL, isLocale } from "@/lib/constants";
 
 export const dynamic = "force-dynamic";
 
@@ -29,8 +29,9 @@ export async function generateMetadata({
 
   const url = `${SITE_URL}/${post.locale}/blog/${post.slug}`;
   const ogImage = buildOgImage(post.coverImage);
-  const ogLocale =
-    post.locale === "de" ? "de_DE" : post.locale === "es" ? "es_ES" : "en_US";
+  const ogLocale = isLocale(post.locale)
+    ? LOCALE_META[post.locale].og
+    : LOCALE_META.en.og;
 
   return {
     title: post.title,
@@ -76,14 +77,13 @@ export async function generateStaticParams() {
   // Pre-resolve published slugs at build time so the first hit is fast.
   // Falls back to dynamic rendering for any post created after build.
   try {
-    const posts = await listPublishedPosts("en");
-    const de = await listPublishedPosts("de");
-    const es = await listPublishedPosts("es");
-    return [
-      ...posts.map((p) => ({ locale: "en", slug: p.slug })),
-      ...de.map((p) => ({ locale: "de", slug: p.slug })),
-      ...es.map((p) => ({ locale: "es", slug: p.slug })),
-    ];
+    const perLocale = await Promise.all(
+      LOCALES.map(async (locale) => {
+        const posts = await listPublishedPosts(locale);
+        return posts.map((p) => ({ locale, slug: p.slug }));
+      }),
+    );
+    return perLocale.flat();
   } catch {
     return [];
   }

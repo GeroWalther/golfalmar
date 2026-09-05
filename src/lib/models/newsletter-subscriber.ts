@@ -1,4 +1,5 @@
 import { Schema, model, models, type InferSchemaType, type Model } from "mongoose";
+import { LOCALES } from "../constants";
 
 const NewsletterSubscriberSchema = new Schema(
   {
@@ -11,7 +12,7 @@ const NewsletterSubscriberSchema = new Schema(
       index: true,
     },
     name: { type: String, trim: true, maxlength: 120 },
-    locale: { type: String, enum: ["en", "de", "es"], default: "en" },
+    locale: { type: String, enum: [...LOCALES], default: "en" },
     source: { type: String, default: "home", maxlength: 60 },
     status: {
       type: String,

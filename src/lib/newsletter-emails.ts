@@ -14,6 +14,8 @@ const SUBJECT_BY_LOCALE: Record<string, string> = {
   en: "Welcome to GOLF AL MAR — here's your 15% discount code",
   de: "Willkommen bei GOLF AL MAR — hier ist Ihr 15 % Rabattcode",
   es: "Bienvenido a GOLF AL MAR — aquí tienes tu código 15 % de descuento",
+  zh: "欢迎来到 GOLF AL MAR — 这是您的 15% 折扣码",
+  ja: "GOLF AL MAR へようこそ — 15% オフのコードをお届けします",
 };
 
 const COPY_BY_LOCALE: Record<
@@ -65,6 +67,31 @@ const COPY_BY_LOCALE: Record<
       "Enviamos pocas notas por temporada — nunca spam, fácil darse de baja.",
     legal:
       "Código de un solo uso. No combinable con otras promociones. Válido en www.golfalmar.com.",
+  },
+  zh: {
+    headline: "欢迎加入。",
+    intro:
+      "感谢您关注 GOLF AL MAR Journal。作为答谢，您的首单可享 15% 折扣 — 适用于精品店内的全部商品。",
+    codeLabel: "您的折扣码",
+    instructions: "结账时将此折扣码填入优惠码栏位。仅限使用一次。",
+    cta: "前往精品店",
+    footer:
+      "我们每季只发送少量内容 — 绝无垃圾邮件，随时可退订。",
+    legal:
+      "折扣码仅限使用一次。不可与其他优惠同时使用。适用于 www.golfalmar.com。",
+  },
+  ja: {
+    headline: "ようこそ。",
+    intro:
+      "GOLF AL MAR Journal にご登録いただきありがとうございます。感謝のしるしとして、初回のご注文が 15% オフになります — ブティックの全商品が対象です。",
+    codeLabel: "あなたのコード",
+    instructions:
+      "ご購入手続きのプロモーションコード欄にこのコードを入力してください。1 回限り有効です。",
+    cta: "ブティックを見る",
+    footer:
+      "配信はシーズンごとに数通のみ — 迷惑メールは送りません。配信停止も簡単です。",
+    legal:
+      "1 回限り有効なコードです。他のプロモーションとの併用はできません。www.golfalmar.com でご利用いただけます。",
   },
 };
 

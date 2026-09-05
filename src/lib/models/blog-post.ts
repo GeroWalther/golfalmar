@@ -1,4 +1,5 @@
 import { Schema, model, models, type InferSchemaType, type Model } from "mongoose";
+import { LOCALES } from "../constants";
 
 const BlogPostSchema = new Schema(
   {
@@ -9,7 +10,7 @@ const BlogPostSchema = new Schema(
     coverImageAlt: { type: String, trim: true, maxlength: 200 },
     contentHtml: { type: String, required: true },
     author: { type: String, trim: true, default: "GOLF AL MAR" },
-    locale: { type: String, enum: ["en", "de", "es"], default: "en", index: true },
+    locale: { type: String, enum: [...LOCALES], default: "en", index: true },
     status: {
       type: String,
       enum: ["draft", "published"],
