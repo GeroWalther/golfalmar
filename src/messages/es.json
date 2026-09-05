@@ -90,6 +90,7 @@
     "youMayAlsoLike": "También te puede gustar",
     "quantity": "Cantidad",
     "back": "Volver a la boutique",
+    "detailsLabel": "Detalles",
     "sport-sunscreen": {
       "name": "Golfers Pro Sunscreen — SPF 30",
       "tagline": "UNA APLICACIÓN DURA TODO EL DÍA",
@@ -153,12 +154,13 @@
       "promise": "Mejora tu agarre. Mejora tu juego."
     },
     "dolo-golf": {
-      "name": "DOLO Golf — Crema articular y muscular",
+      "name": "DOLO Golf FORTE — Crema articular y muscular",
       "tagline": "JUEGA MEJOR. JUEGA SIN DOLOR.",
       "shortDescription": "Una crema antiinflamatoria botánica desarrollada para golfistas. Calma el dolor, acelera la recuperación y cuida la longevidad articular — sin activos sintéticos.",
-      "longDescription": "El golf es un deporte de contacto. Cada swing carga la columna, el hombro adelantado, los codos, las muñecas. Dieciocho hoyos equivalen aproximadamente a doscientas rotaciones de alta torsión sobre un cuerpo que no fue construido de forma simétrica. Con el tiempo, incluso los profesionales desarrollan desequilibrios musculares, rigidez crónica y ese dolor latente que va erosionando un buen swing.\n\nDOLO Golf es la respuesta. Una crema tópica de acción profunda, formulada para inhibir los procesos inflamatorios, aliviar el dolor muscular y articular, y preservar la función y la potencia que sostienen tu juego. Aplícala antes de la ronda para preparar al cuerpo. Aplícala después para acelerar la recuperación y protegerte del desgaste a largo plazo.\n\nSin activos sintéticos. Sin ardor mentolado. Una fórmula vegetal con carácter — refinada a estándares farmacéuticos, diseñada en torno a cómo se mueve realmente un golfista.",
-      "useTitle": "La realidad del golfista",
-      "useBody": "El 53 % de los golfistas masculinos y el 45 % de las golfistas femeninas sufren dolor lumbar. Uno de cada tres tiene más de 50 años — y no siempre está en plena forma. El 30 % de los profesionales del tour juega con una lesión. DOLO Golf se desarrolló para que tú no tengas que hacerlo.",
+      "descriptionTitle": "El golf es más que un buen swing",
+      "longDescription": "El golf parece no costar esfuerzo. Un drive tranquilo, un paseo por el campo, concentración sobre el putt.\n\nPero quien juega con regularidad lo sabe: 18 hoyos le exigen mucho al cuerpo.",
+      "useTitle": "El cuerpo juega cada vuelta contigo",
+      "useBody": "Un swing de golf es un movimiento complejo. Pies, piernas, cadera, tronco, hombros, brazos y manos deben coordinarse con precisión en apenas unos segundos.\n\nEse movimiento se repite una y otra vez a lo largo de la vuelta.\n\nA medida que avanza el juego puede aparecer la fatiga. Los movimientos se sienten menos fluidos, la concentración puede disminuir y los músculos y las articulaciones se ven más exigidos.",
       "featuresTitle": "Fórmula",
       "features": [
         "Acción antiinflamatoria de origen vegetal",

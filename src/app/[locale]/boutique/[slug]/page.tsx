@@ -75,6 +75,7 @@ export default async function ProductDetailPage({
   const shortDesc = t(`${product.id}.shortDescription`);
   const longDesc = t(`${product.id}.longDescription`);
   const tagline = safeTranslate(t, `${product.id}.tagline`);
+  const descriptionTitle = safeTranslate(t, `${product.id}.descriptionTitle`);
   const sensitiveTitle = safeTranslate(t, `${product.id}.sensitiveTitle`);
   const sensitiveBody = safeTranslate(t, `${product.id}.sensitiveBody`);
   const useTitle = safeTranslate(t, `${product.id}.useTitle`);
@@ -175,7 +176,13 @@ export default async function ProductDetailPage({
               </div>
             )}
             <div className="space-y-4">
-              <p className="eyebrow">Details</p>
+              {descriptionTitle ? (
+                <h2 className="font-heading text-xl sm:text-2xl font-semibold uppercase tracking-tight">
+                  {descriptionTitle}
+                </h2>
+              ) : (
+                <p className="eyebrow">{tCommon("products.detailsLabel")}</p>
+              )}
               <div className="space-y-4 text-base text-foreground/80 leading-relaxed whitespace-pre-line">
                 {longDesc}
               </div>
@@ -217,7 +224,7 @@ export default async function ProductDetailPage({
               <h2 className="font-heading text-xl sm:text-2xl font-semibold uppercase tracking-tight">
                 {useTitle}
               </h2>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground leading-relaxed whitespace-pre-line">
                 {useBody}
               </p>
             </section>

@@ -89,6 +89,7 @@
     "youMayAlsoLike": "You may also like",
     "quantity": "Quantity",
     "back": "Back to boutique",
+    "detailsLabel": "Details",
     "sport-sunscreen": {
       "name": "Golfers Pro Sunscreen — SPF 30",
       "tagline": "ONE APPLICATION LASTS ALL DAY",
@@ -152,12 +153,13 @@
       "promise": "Improve your grip. Improve your game."
     },
     "dolo-golf": {
-      "name": "DOLO Golf — Joint & Muscle Relief Cream",
+      "name": "DOLO Golf FORTE — Joint & Muscle Relief Cream",
       "tagline": "PLAY BETTER. PLAY WITHOUT PAIN.",
       "shortDescription": "A botanical anti-inflammatory cream built for golfers. Calms pain, accelerates recovery, supports joint longevity — without synthetic actives.",
-      "longDescription": "Golf is a contact sport. Every swing loads the spine, the lead shoulder, the elbows, the wrists. Eighteen holes is roughly two hundred high-torque rotations on a body that wasn't built symmetrically. Over time, even the pros develop unbalanced muscles, chronic stiffness, and the kind of low-grade pain that quietly erodes a swing.\n\nDOLO Golf is the answer. A deep-acting topical cream formulated to inhibit inflammatory processes, ease muscle and joint pain, and preserve the function and power that drive your game. Apply pre-round to prepare the body for load. Apply post-round to accelerate recovery and protect against the long-term wear of the sport.\n\nNo synthetic actives. No menthol burn. Just a confident plant-based formula, refined to pharmaceutical standards and engineered around the way golfers actually move.",
-      "useTitle": "The reality of being a golfer",
-      "useBody": "53% of male golfers and 45% of female golfers suffer from lower back pain. One in three is over 50 — and not always in top condition. 30% of professionals on tour are playing through an injury. DOLO Golf was developed so you don't have to.",
+      "descriptionTitle": "Golf is more than a good swing",
+      "longDescription": "Golf looks effortless. A calm tee shot, a walk across the course, focus over the putt.\n\nBut anyone who plays regularly knows: 18 holes ask a great deal of the body.",
+      "useTitle": "Your body plays every round with you",
+      "useBody": "A golf swing is a complex movement. Feet, legs, hips, torso, shoulders, arms and hands all have to work together precisely within a few seconds.\n\nThat movement is repeated again and again over a round.\n\nAs the round goes on, fatigue can set in. Movements start to feel less easy, concentration can slip, and muscles and joints come under greater strain.",
       "featuresTitle": "Formula",
       "features": [
         "Plant-based anti-inflammatory action",

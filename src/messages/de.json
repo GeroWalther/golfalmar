@@ -90,6 +90,7 @@
     "youMayAlsoLike": "Das könnte Ihnen auch gefallen",
     "quantity": "Menge",
     "back": "Zurück zur Boutique",
+    "detailsLabel": "Details",
     "sport-sunscreen": {
       "name": "Golfers Pro Sunscreen — SPF 30",
       "tagline": "EINE ANWENDUNG HÄLT DEN GANZEN TAG",
@@ -153,12 +154,13 @@
       "promise": "Verbessere deinen Grip. Verbessere dein Spiel."
     },
     "dolo-golf": {
-      "name": "DOLO Golf — Gelenk- & Muskelcreme",
+      "name": "DOLO Golf FORTE — Gelenk- & Muskelcreme",
       "tagline": "BESSER SPIELEN. OHNE SCHMERZ.",
       "shortDescription": "Eine pflanzliche, entzündungshemmende Creme — entwickelt für Golfer. Lindert Schmerzen, beschleunigt die Erholung, unterstützt langfristige Gelenkfunktion — ohne synthetische Wirkstoffe.",
-      "longDescription": "Golf ist ein Kontaktsport. Jeder Schwung belastet die Wirbelsäule, die führende Schulter, die Ellenbogen, die Handgelenke. Achtzehn Löcher sind rund zweihundert hochtourige Rotationen auf einem Körper, der nicht symmetrisch gebaut ist. Mit der Zeit entwickeln selbst Profis muskuläre Dysbalancen, chronische Steifheit und genau jene latenten Schmerzen, die einen Schwung leise zerfressen.\n\nDOLO Golf ist die Antwort. Eine tiefwirksame Creme zur äußerlichen Anwendung, formuliert um Entzündungsprozesse zu hemmen, Muskel- und Gelenkschmerzen zu lindern und die Funktion und Kraft zu erhalten, die Ihr Spiel tragen. Vor der Runde aufgetragen bereitet sie den Körper auf die Belastung vor. Nach der Runde beschleunigt sie die Erholung und schützt vor dem langfristigen Verschleiß des Sports.\n\nKeine synthetischen Wirkstoffe. Kein Menthol-Brennen. Eine selbstbewusste pflanzliche Formel — verfeinert nach pharmazeutischen Standards, entwickelt für die Bewegung eines Golfers.",
-      "useTitle": "Die Realität des Golfens",
-      "useBody": "53 % der männlichen und 45 % der weiblichen Golfer leiden unter Schmerzen im unteren Rücken. Jeder dritte ist über 50 — und nicht immer in Topform. 30 % der Tour-Profis spielen mit einer Verletzung. DOLO Golf wurde entwickelt, damit Sie es nicht müssen.",
+      "descriptionTitle": "Golf ist mehr als ein guter Schwung",
+      "longDescription": "Golf sieht mühelos aus. Ein ruhiger Abschlag, ein Spaziergang über den Platz, Konzentration beim Putten.\n\nDoch wer regelmäßig spielt, weiß: 18 Löcher verlangen dem Körper einiges ab.",
+      "useTitle": "Der Körper spielt jede Runde mit",
+      "useBody": "Ein Golfschwung ist eine komplexe Bewegung. Füße, Beine, Hüfte, Rumpf, Schultern, Arme und Hände müssen innerhalb weniger Sekunden präzise zusammenspielen.\n\nDiese Bewegung wird während einer Runde immer wieder ausgeführt.\n\nMit zunehmender Spieldauer kann Ermüdung entstehen. Bewegungen fühlen sich weniger leicht an, die Konzentration kann nachlassen und Muskeln und Gelenke werden stärker beansprucht.",
       "featuresTitle": "Formel",
       "features": [
         "Pflanzliche, entzündungshemmende Wirkung",
