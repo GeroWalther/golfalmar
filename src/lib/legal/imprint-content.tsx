@@ -8,7 +8,7 @@ import type { Locale } from "@/lib/constants";
 const COMPANY = "GOLF AL MAR";
 const ADDRESS_LINES = ["Vicari Joaquin Fuster 269", "07007 Palma de Mallorca", "España"];
 const VAT_ID = "ESX5155070B";
-const EMAIL = "info@golfalmar.com";
+const EMAIL = "hello@golfalmar.com";
 
 function AddressBlock() {
   return (

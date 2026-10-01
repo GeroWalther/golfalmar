@@ -1,29 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-
-/**
- * Renders a translated body string as real paragraphs: blank lines start a new
- * paragraph, single newlines stay as line breaks inside one. Keeps the long
- * about-page copy readable instead of one wall of pre-wrapped text.
- */
-function Paragraphs({
-  text,
-  className,
-}: {
-  text: string;
-  className?: string;
-}) {
-  return (
-    <div className={className}>
-      {text.split("\n\n").map((paragraph, i) => (
-        <p key={i} className="whitespace-pre-line [&:not(:first-child)]:mt-5">
-          {paragraph}
-        </p>
-      ))}
-    </div>
-  );
-}
+import { ArrowUpRight, Gauge, ShieldCheck, Sparkles } from "lucide-react";
+import { LinkButton } from "@/components/ui/link-button";
 
 export async function generateMetadata({
   params,
@@ -35,6 +14,56 @@ export async function generateMetadata({
   return { title: t("title") };
 }
 
+/**
+ * Split a translated body into its paragraphs. Blank lines separate paragraphs,
+ * single newlines stay as line breaks inside one. Every language file keeps the
+ * same paragraph structure for a given key, so the sections below can address a
+ * paragraph by index (e.g. the two questions inside `craftBody`).
+ */
+function paragraphs(text: string): string[] {
+  return text
+    .split("\n\n")
+    .map((p) => p.trim())
+    .filter(Boolean);
+}
+
+/** Eyebrow plus the short rule used as the page-wide section marker. */
+function SectionLabel({ children, tone }: { children: string; tone?: "dark" }) {
+  return (
+    <div className="flex items-center gap-3">
+      <span
+        aria-hidden
+        className={`block h-px w-8 ${tone === "dark" ? "bg-volt" : "bg-fairway"}`}
+      />
+      <p
+        className={`font-mono text-xs uppercase tracking-[0.18em] ${
+          tone === "dark"
+            ? "text-fairway-foreground/70"
+            : "text-muted-foreground"
+        }`}
+      >
+        {children}
+      </p>
+    </div>
+  );
+}
+
+function Prose({ text, className }: { text: string; className?: string }) {
+  return (
+    <div className={className}>
+      {paragraphs(text).map((p, i) => (
+        <p key={i} className="whitespace-pre-line [&:not(:first-child)]:mt-5">
+          {p}
+        </p>
+      ))}
+    </div>
+  );
+}
+
+// Positional — the three values are Performance / Protection / Recovery in
+// every language file, in that order.
+const VALUE_ICONS = [Gauge, ShieldCheck, Sparkles];
+
 export default async function AboutPage({
   params,
 }: {
@@ -43,13 +72,26 @@ export default async function AboutPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "about" });
+  const tHero = await getTranslations({ locale, namespace: "hero" });
+
+  // Synthesised oblique looks wrong for Chinese and Japanese, so the serif
+  // accents stay upright there. The English brand line keeps its italic.
+  const quoteFont =
+    locale === "zh" || locale === "ja" ? "font-serif" : "font-serif italic";
+
+  const values = t.raw("values") as Array<{ title: string; body: string }>;
+  const welcome = paragraphs(t("welcomeBody"));
+  const longGame = paragraphs(t("productsBody"));
+  const craft = paragraphs(t("craftBody"));
+  const note = paragraphs(t("noteBody"));
 
   return (
     <>
-      <section className="relative h-[55vh] min-h-[360px] max-h-[560px] overflow-hidden border-b border-border">
+      {/* ── Hero ─────────────────────────────────────────────── */}
+      <section className="relative h-[68vh] min-h-[440px] max-h-[680px] overflow-hidden border-b border-border">
         <Image
           src="/images/golf.jpg"
-          alt="Golf course at sunrise"
+          alt="GOLF AL MAR on the course"
           fill
           priority
           sizes="100vw"
@@ -57,140 +99,256 @@ export default async function AboutPage({
         />
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent"
+          className="absolute inset-0 bg-gradient-to-t from-background via-background/65 to-transparent"
         />
-        <div className="container-page relative z-10 h-full flex flex-col justify-end pb-4 sm:pb-6">
-          <p className="eyebrow mb-3 text-foreground">{t("eyebrow")}</p>
-          <h1 className="display text-[clamp(2.25rem,5.5vw,4.5rem)] max-w-3xl whitespace-pre-line tracking-[-0.025em] text-foreground">
+        <div className="container-page relative z-10 h-full flex flex-col justify-end pb-12 sm:pb-16">
+          <SectionLabel>{t("eyebrow")}</SectionLabel>
+          <h1 className="mt-5 display text-[clamp(2.5rem,6.5vw,5.5rem)] max-w-4xl tracking-[-0.025em] text-foreground">
             {t("title")}
           </h1>
+          <p className="mt-4 font-serif italic text-xl sm:text-2xl text-fairway">
+            {t("welcomeEyebrow")}
+          </p>
         </div>
       </section>
 
-      <article className="container-page pt-16 sm:pt-24 pb-8">
+      {/* ── Lead: why we exist ───────────────────────────────── */}
+      <section className="container-page py-20 sm:py-28">
         <div className="max-w-[46rem]">
-          <section className="space-y-5">
-            <p className="eyebrow">{t("welcomeEyebrow")}</p>
-            <Paragraphs
-              text={t("welcomeBody")}
-              className="text-lg sm:text-xl text-foreground/90 leading-relaxed"
-            />
-          </section>
-
-          <p className="mt-14 text-base sm:text-lg text-muted-foreground leading-relaxed">
+          <SectionLabel>{t("leadEyebrow")}</SectionLabel>
+          <p className="mt-8 text-2xl sm:text-[1.75rem] leading-snug text-foreground whitespace-pre-line">
+            {welcome[0]}
+          </p>
+          <div className="mt-8 space-y-5 text-lg text-muted-foreground leading-relaxed">
+            {welcome.slice(1).map((p, i) => (
+              <p key={i} className="whitespace-pre-line">
+                {p}
+              </p>
+            ))}
+          </div>
+          <p className="mt-10 border-l-2 border-volt pl-6 text-lg sm:text-xl text-fairway leading-relaxed">
             {t("intro")}
           </p>
+        </div>
+      </section>
 
-          <blockquote className="mt-12 sm:mt-16 border-l-4 border-fairway pl-6 sm:pl-8 py-2">
-            <p className="font-heading text-2xl sm:text-3xl font-light tracking-[-0.01em] text-fairway leading-snug italic">
+      {/* ── Pull quote ───────────────────────────────────────── */}
+      <section className="border-y border-border bg-sand/50">
+        <div className="container-page py-20 sm:py-28 flex flex-col items-center text-center">
+          <div className="relative size-24 sm:size-28">
+            <Image
+              src="/images/golfalmar.png"
+              alt=""
+              aria-hidden
+              fill
+              sizes="112px"
+              className="object-contain mix-blend-multiply"
+            />
+          </div>
+          <blockquote className="mt-8 max-w-3xl">
+            <p
+              className={`${quoteFont} text-[clamp(1.5rem,3.4vw,2.5rem)] leading-[1.25] text-fairway`}
+            >
               &ldquo;{t("pullQuote")}&rdquo;
             </p>
           </blockquote>
+          <span aria-hidden className="mt-8 block h-px w-16 bg-fairway/40" />
+        </div>
+      </section>
 
-          <section className="mt-16 space-y-4">
-            <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
+      {/* ── Origin ───────────────────────────────────────────── */}
+      <section className="container-page py-20 sm:py-28">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16 items-center">
+          <div className="lg:col-span-6 order-2 lg:order-1">
+            <SectionLabel>{t("originEyebrow")}</SectionLabel>
+            <h2 className="mt-5 display text-3xl sm:text-5xl max-w-xl">
               {t("originTitle")}
             </h2>
-            <Paragraphs
+            <Prose
               text={t("originBody")}
-              className="text-base sm:text-lg text-muted-foreground leading-relaxed"
-            />
-          </section>
-        </div>
-
-        <section className="mt-12 grid gap-8 lg:grid-cols-5 items-start">
-          <div className="lg:col-span-3 space-y-4">
-            <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
-              {t("missionTitle")}
-            </h2>
-            <Paragraphs
-              text={t("missionBody")}
-              className="text-base sm:text-lg text-muted-foreground leading-relaxed"
+              className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl"
             />
           </div>
-          <div className="lg:col-span-2 relative aspect-square rounded-md overflow-hidden bg-sand">
-            <Image
-              src="/images/playerGeroDriver.jpg"
-              alt="GOLF AL MAR — Gero with driver"
-              fill
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover"
-            />
-          </div>
-        </section>
-      </article>
-
-      {/* Values pillars — full bleed band with sand background */}
-      <section className="border-y border-border bg-sand/40 mt-16">
-        <div className="container-page py-20 sm:py-24">
-          <div className="max-w-3xl mb-12 space-y-3">
-            <p className="eyebrow">{t("valuesEyebrow")}</p>
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold uppercase tracking-tight">
-              {t("valuesTitle")}
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground">
-              {t("valuesIntro")}
-            </p>
-          </div>
-          <div className="grid gap-8 sm:gap-10 md:grid-cols-3">
-            {(t.raw("values") as Array<{ title: string; body: string }>).map(
-              (value, i) => (
-                <article key={value.title} className="space-y-3">
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-fairway">
-                    0{i + 1}
-                  </p>
-                  <h3 className="font-heading text-xl sm:text-2xl font-semibold uppercase tracking-tight">
-                    {value.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    {value.body}
-                  </p>
-                </article>
-              ),
-            )}
+          <div className="lg:col-span-6 order-1 lg:order-2">
+            <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] rounded-md overflow-hidden bg-sand border border-border">
+              <Image
+                src="/images/geroholeinone.jpg"
+                alt="GOLF AL MAR — a moment on the course"
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      <article className="container-page pt-16 sm:pt-20 pb-8">
-        <div className="max-w-[46rem]">
-          <section className="space-y-4">
-            <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
+      {/* ── Mission ──────────────────────────────────────────── */}
+      <section className="container-page pb-20 sm:pb-28">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16 items-center">
+          <div className="lg:col-span-5">
+            <div className="relative aspect-square rounded-md overflow-hidden bg-sand border border-border">
+              <Image
+                src="/images/playerGeroDriver.jpg"
+                alt="GOLF AL MAR — Gero with driver"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <div className="lg:col-span-7">
+            <SectionLabel>{t("missionEyebrow")}</SectionLabel>
+            <h2 className="mt-5 display text-3xl sm:text-5xl max-w-xl">
+              {t("missionTitle")}
+            </h2>
+            <Prose
+              text={t("missionBody")}
+              className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Values — dark band, the spine of the page ─────────── */}
+      <section className="border-y border-border bg-fairway text-fairway-foreground">
+        <div className="container-page py-20 sm:py-28">
+          <div className="max-w-2xl">
+            <SectionLabel tone="dark">{t("valuesEyebrow")}</SectionLabel>
+            <h2 className="mt-5 display text-3xl sm:text-5xl">
+              {t("valuesTitle")}
+            </h2>
+            <p className="mt-5 text-base sm:text-lg text-fairway-foreground/75 leading-relaxed">
+              {t("valuesIntro")}
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-px sm:grid-cols-3 bg-fairway-foreground/15 rounded-md overflow-hidden">
+            {values.map((value, i) => {
+              const Icon = VALUE_ICONS[i] ?? Gauge;
+              return (
+                <article key={value.title} className="bg-fairway p-8 sm:p-10">
+                  <div className="flex items-center justify-between">
+                    <span className="flex size-11 items-center justify-center rounded-full bg-volt text-volt-foreground">
+                      <Icon className="size-5" />
+                    </span>
+                    <span className="font-mono text-xs tracking-[0.18em] text-volt">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <h3 className="mt-7 font-heading text-xl sm:text-2xl font-semibold uppercase tracking-tight">
+                    {value.title}
+                  </h3>
+                  <p className="mt-3 text-sm sm:text-base text-fairway-foreground/75 leading-relaxed">
+                    {value.body}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── The long game ────────────────────────────────────── */}
+      <section className="container-page py-20 sm:py-28">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionLabel>{t("longGameEyebrow")}</SectionLabel>
+            <h2 className="mt-5 display text-3xl sm:text-5xl">
               {t("productsTitle")}
             </h2>
-            <Paragraphs
-              text={t("productsBody")}
-              className="text-base sm:text-lg text-muted-foreground leading-relaxed"
-            />
-          </section>
+          </div>
+          <div className="lg:col-span-7 max-w-[42rem]">
+            <p className="text-xl sm:text-2xl leading-snug text-foreground">
+              {longGame[0]}
+            </p>
+            <div className="mt-6 space-y-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
+              {longGame.slice(1, -1).map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+            <p className="mt-8 font-heading text-lg sm:text-xl font-semibold uppercase tracking-tight text-fairway">
+              {longGame[longGame.length - 1]}
+            </p>
+          </div>
+        </div>
 
-          <section className="mt-12 space-y-4">
-            <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
+        <div className="mt-14 relative aspect-[21/9] sm:aspect-[3/1] rounded-md overflow-hidden bg-sand border border-border">
+          <Image
+            src="/images/ball-with-logo-on-grass.png"
+            alt="GOLF AL MAR — built for the long game"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+      </section>
+
+      {/* ── Our standard — the two questions ─────────────────── */}
+      <section className="border-y border-border bg-sand/50">
+        <div className="container-page py-20 sm:py-28">
+          <div className="max-w-2xl">
+            <SectionLabel>{t("craftEyebrow")}</SectionLabel>
+            <h2 className="mt-5 display text-3xl sm:text-5xl">
               {t("craftTitle")}
             </h2>
-            <Paragraphs
-              text={t("craftBody")}
-              className="text-base sm:text-lg text-muted-foreground leading-relaxed"
-            />
-          </section>
-
-          <section className="mt-16 rounded-md border border-border bg-card p-8 sm:p-10 space-y-4">
-            <h2 className="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-tight">
-              {t("noteTitle")}
-            </h2>
-            <Paragraphs
-              text={t("noteBody")}
-              className="text-base sm:text-lg text-foreground/85 leading-relaxed"
-            />
-            <p className="font-serif italic text-sm sm:text-base text-foreground pt-2">
-              {t("noteSignoff")}
+            <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
+              {craft[0]}
             </p>
-          </section>
-        </div>
-      </article>
+          </div>
 
-      {/* Closing crest with green fade rising from below — like grass. Sits flush with the footer (negates SiteFooter's mt-24). */}
-      <section className="relative overflow-hidden">
+          <div className="mt-12 grid gap-6 sm:gap-8 md:grid-cols-2">
+            {craft.slice(1, -1).map((question, i) => (
+              <article
+                key={i}
+                className="rounded-md border border-border bg-background p-8 sm:p-10"
+              >
+                <span className="font-mono text-xs tracking-[0.18em] text-fairway">
+                  0{i + 1}
+                </span>
+                <p
+                  className={`mt-5 ${quoteFont} text-xl sm:text-2xl leading-snug text-foreground`}
+                >
+                  {question}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <p className="mt-10 font-heading text-lg sm:text-xl font-semibold uppercase tracking-tight text-fairway max-w-2xl">
+            {craft[craft.length - 1]}
+          </p>
+        </div>
+      </section>
+
+      {/* ── More than equipment ──────────────────────────────── */}
+      <section className="container-page py-20 sm:py-28">
+        <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
+          <SectionLabel>{t("closingEyebrow")}</SectionLabel>
+          <h2 className="mt-5 display text-3xl sm:text-5xl">{t("noteTitle")}</h2>
+          <p className="mt-8 text-xl sm:text-2xl leading-snug text-foreground">
+            {note[0]}
+          </p>
+
+          <ul
+            className={`mt-12 space-y-3 ${quoteFont} text-lg sm:text-xl text-muted-foreground`}
+          >
+            {note[1].split("\n").map((line, i) => (
+              <li key={i}>{line}</li>
+            ))}
+          </ul>
+
+          <p className="mt-14 display text-[clamp(1.75rem,4vw,3rem)] whitespace-pre-line text-fairway">
+            {note[2]}
+          </p>
+          <p className="mt-8 font-heading text-lg sm:text-xl font-semibold uppercase tracking-tight">
+            {note[3]}
+          </p>
+        </div>
+      </section>
+
+      {/* ── Crest + close ────────────────────────────────────── */}
+      <section className="relative overflow-hidden border-t border-border">
         <div
           aria-hidden
           className="absolute inset-x-0 bottom-0 h-full bg-[radial-gradient(ellipse_at_bottom,_var(--volt)_0%,_transparent_65%)] opacity-70 pointer-events-none"
@@ -199,8 +357,8 @@ export default async function AboutPage({
           aria-hidden
           className="absolute inset-x-0 bottom-0 h-1/2 bg-[radial-gradient(ellipse_at_bottom_center,_var(--fairway)_0%,_transparent_75%)] opacity-25 pointer-events-none"
         />
-        <div className="relative container-page pt-32 sm:pt-48 pb-32 sm:pb-40 flex flex-col items-center">
-          <div className="relative size-42 sm:size-50">
+        <div className="relative container-page pt-24 sm:pt-32 pb-24 sm:pb-32 flex flex-col items-center text-center">
+          <div className="relative size-36 sm:size-44">
             <Image
               src="/images/golfalmar.png"
               alt="GOLF AL MAR crest"
@@ -209,9 +367,13 @@ export default async function AboutPage({
               className="object-contain mix-blend-multiply"
             />
           </div>
-          <p className="mt-2 italic font-serif text-green-950 text-xl sm:text-2xl text-center">
-            ..... made to improve your game.
+          <p className="mt-3 font-serif italic text-green-950 text-xl sm:text-2xl">
+            {t("noteSignoff")}
           </p>
+          <LinkButton href="/boutique" size="lg" className="mt-10">
+            {tHero("primaryCta")}
+            <ArrowUpRight className="ml-1 size-4" />
+          </LinkButton>
         </div>
       </section>
     </>
