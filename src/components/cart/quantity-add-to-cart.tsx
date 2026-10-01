@@ -11,14 +11,24 @@ import { clampQty, MAX_QUANTITY } from "@/lib/cart";
 export function QuantityAddToCart({
   productId,
   productName,
+  soldOut = false,
 }: {
   productId: string;
   productName: string;
+  soldOut?: boolean;
 }) {
   const t = useTranslations("cart");
   const tProducts = useTranslations("products");
   const { addItem, setOpen } = useCart();
   const [qty, setQty] = useState(1);
+
+  if (soldOut) {
+    return (
+      <Button type="button" size="lg" variant="outline" disabled className="sm:min-w-56">
+        {tProducts("soldOut")}
+      </Button>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-center">

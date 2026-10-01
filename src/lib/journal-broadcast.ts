@@ -153,7 +153,8 @@ export async function broadcastJournalPost(post: Post): Promise<{
   for (let i = 0; i < emails.length; i += 100) {
     const chunk = emails.slice(i, i + 100);
     try {
-      await resend.batch.send(chunk);
+      const { error } = await resend.batch.send(chunk);
+      if (error) throw new Error(error.message);
       sent += chunk.length;
     } catch (e) {
       console.error("[journal-broadcast] batch failed", { offset: i }, e);

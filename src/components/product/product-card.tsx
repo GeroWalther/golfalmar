@@ -6,8 +6,15 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { formatPriceEUR, type Product } from "@/lib/products";
 import { AddToCartButton } from "@/components/cart/add-to-cart-button";
+import { Button } from "@/components/ui/button";
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({
+  product,
+  soldOut = false,
+}: {
+  product: Product;
+  soldOut?: boolean;
+}) {
   const tProducts = useTranslations("products");
   const locale = useLocale();
   const name = tProducts(`${product.id}.name`);
@@ -21,8 +28,13 @@ export function ProductCard({ product }: { product: Product }) {
           alt={name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-contain p-10 transition-transform duration-500 group-hover:scale-105"
+          className={`object-contain p-10 transition-transform duration-500 group-hover:scale-105 ${soldOut ? "opacity-50" : ""}`}
         />
+        {soldOut && (
+          <span className="absolute left-3 top-3 rounded-full bg-foreground text-background px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider">
+            {tProducts("soldOut")}
+          </span>
+        )}
         <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-background/85 backdrop-blur px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider opacity-0 group-hover:opacity-100 transition">
           {tProducts("viewProduct")}
           <ArrowUpRight className="size-3" />
@@ -43,15 +55,21 @@ export function ProductCard({ product }: { product: Product }) {
           <p className="font-heading text-lg sm:text-xl font-medium tracking-tight">
             {formatPriceEUR(product.priceCents, locale)}
           </p>
-          <AddToCartButton
-            productId={product.id}
-            productName={name}
-            variant="default"
-            size="default"
-            showIcon
-          >
-            {tProducts("addToCart")}
-          </AddToCartButton>
+          {soldOut ? (
+            <Button type="button" variant="outline" disabled>
+              {tProducts("soldOut")}
+            </Button>
+          ) : (
+            <AddToCartButton
+              productId={product.id}
+              productName={name}
+              variant="default"
+              size="default"
+              showIcon
+            >
+              {tProducts("addToCart")}
+            </AddToCartButton>
+          )}
         </div>
       </div>
     </article>

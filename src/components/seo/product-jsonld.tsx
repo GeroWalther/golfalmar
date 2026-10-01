@@ -10,11 +10,13 @@ export function ProductJsonLd({
   locale,
   name,
   description,
+  soldOut = false,
 }: {
   product: Product;
   locale: string;
   name: string;
   description: string;
+  soldOut?: boolean;
 }) {
   const canonical = `${SITE_URL}/${locale}/boutique/${product.slug}`;
   const images = [product.image, ...(product.gallery ?? [])].map(absolute);
@@ -32,7 +34,9 @@ export function ProductJsonLd({
       url: canonical,
       priceCurrency: product.currency.toUpperCase(),
       price: (product.priceCents / 100).toFixed(2),
-      availability: "https://schema.org/InStock",
+      availability: soldOut
+        ? "https://schema.org/OutOfStock"
+        : "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
     },
     inLanguage: locale,

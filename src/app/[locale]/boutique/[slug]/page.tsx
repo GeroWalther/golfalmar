@@ -9,6 +9,7 @@ import { QuantityAddToCart } from "@/components/cart/quantity-add-to-cart";
 import { ProductGallery } from "@/components/product/product-gallery";
 import { ProductJsonLd } from "@/components/seo/product-jsonld";
 import { PRODUCTS, formatPriceEUR } from "@/lib/products";
+import { getSoldOutIds } from "@/lib/stock";
 import { routing } from "@/i18n/routing";
 
 // Helpers — let new fields like "tagline", "features" be optional per product
@@ -92,6 +93,7 @@ export default async function ProductDetailPage({
   const secondaryListTitle = testedTitle || areasTitle;
   const secondaryList = tested.length > 0 ? tested : areas;
   const others = PRODUCTS.filter((p) => p.id !== product.id);
+  const soldOut = (await getSoldOutIds()).includes(product.id);
 
   return (
     <div className="container-page py-12 sm:py-16">
@@ -100,6 +102,7 @@ export default async function ProductDetailPage({
         locale={locale}
         name={name}
         description={shortDesc}
+        soldOut={soldOut}
       />
       <Link
         href="/boutique"
@@ -148,7 +151,11 @@ export default async function ProductDetailPage({
             )}
           </div>
 
-          <QuantityAddToCart productId={product.id} productName={name} />
+          <QuantityAddToCart
+            productId={product.id}
+            productName={name}
+            soldOut={soldOut}
+          />
 
           {blockedClaim && (
             <div className="flex items-center gap-3 rounded-md border border-fairway/30 bg-fairway/5 px-4 py-3">

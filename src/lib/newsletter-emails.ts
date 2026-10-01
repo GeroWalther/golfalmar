@@ -1,4 +1,4 @@
-import { getResend, FROM_EMAIL } from "./resend";
+import { sendEmail, FROM_EMAIL } from "./resend";
 import { BUSINESS, SITE_URL } from "./constants";
 
 function escapeHtml(s: string): string {
@@ -144,8 +144,7 @@ ${shopUrl}
 
 — ${BUSINESS.name}`;
 
-  const resend = getResend();
-  await resend.emails.send({
+  await sendEmail({
     from: FROM_EMAIL,
     to: opts.email,
     subject,

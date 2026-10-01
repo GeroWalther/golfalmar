@@ -3,6 +3,7 @@
 import * as React from "react";
 import {
   CART_STORAGE_KEY,
+  SHIPPING_REGION_STORAGE_KEY,
   cartItemCount,
   cartTotalCents,
   clampQty,
@@ -10,6 +11,7 @@ import {
   type CartItem,
   type ResolvedCartItem,
 } from "@/lib/cart";
+import { SHIPPING_REGIONS, type ShippingRegion } from "@/lib/shipping";
 
 type CartContextValue = {
   items: CartItem[];
@@ -23,6 +25,8 @@ type CartContextValue = {
   removeItem: (productId: string) => void;
   setQuantity: (productId: string, quantity: number) => void;
   clear: () => void;
+  shippingRegion: ShippingRegion;
+  setShippingRegion: (region: ShippingRegion) => void;
 };
 
 const CartContext = React.createContext<CartContextValue | null>(null);
@@ -31,6 +35,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = React.useState<CartItem[]>([]);
   const [hydrated, setHydrated] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [shippingRegion, setShippingRegion] =
+    React.useState<ShippingRegion>("eu");
 
   React.useEffect(() => {
     try {
@@ -49,6 +55,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           );
         }
       }
+      const region = window.localStorage.getItem(SHIPPING_REGION_STORAGE_KEY);
+      if (SHIPPING_REGIONS.includes(region as ShippingRegion)) {
+        setShippingRegion(region as ShippingRegion);
+      }
     } catch {
       /* ignore corrupted storage */
     }
@@ -59,10 +69,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     if (!hydrated) return;
     try {
       window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+      window.localStorage.setItem(SHIPPING_REGION_STORAGE_KEY, shippingRegion);
     } catch {
       /* ignore quota errors */
     }
-  }, [items, hydrated]);
+  }, [items, shippingRegion, hydrated]);
 
   const addItem = React.useCallback(
     (productId: string, quantity: number = 1) => {
@@ -117,8 +128,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       removeItem,
       setQuantity,
       clear,
+      shippingRegion,
+      setShippingRegion,
     }),
-    [items, hydrated, open, addItem, removeItem, setQuantity, clear],
+    [items, hydrated, open, addItem, removeItem, setQuantity, clear, shippingRegion],
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

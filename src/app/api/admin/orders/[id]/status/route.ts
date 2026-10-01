@@ -3,6 +3,7 @@ import { z } from "zod";
 import { connectDB } from "@/lib/db";
 import { Order } from "@/lib/models/order";
 import { sendShippedNotification } from "@/lib/emails";
+import { getStripe } from "@/lib/stripe";
 
 export const runtime = "nodejs";
 
@@ -37,6 +38,32 @@ export async function PATCH(
       },
       { status: 400 },
     );
+  }
+
+  // Refund the money in Stripe before we record it as refunded. Already
+  // refunded from the Stripe dashboard is fine — just record it.
+  if (
+    parsed.status === "refunded" &&
+    order.status !== "refunded" &&
+    order.stripePaymentIntentId
+  ) {
+    try {
+      await getStripe().refunds.create({
+        payment_intent: order.stripePaymentIntentId,
+      });
+    } catch (e) {
+      const code = (e as { code?: string }).code;
+      if (code !== "charge_already_refunded") {
+        console.error("[admin/orders/status] stripe refund failed", e);
+        return NextResponse.json(
+          {
+            error: `Stripe refund failed: ${(e as Error).message}`,
+            code: "REFUND_FAILED",
+          },
+          { status: 502 },
+        );
+      }
+    }
   }
 
   const wasFulfilled = order.status === "fulfilled";

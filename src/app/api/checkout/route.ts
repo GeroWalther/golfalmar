@@ -5,6 +5,8 @@ import { getStripe } from "@/lib/stripe";
 import { PRODUCTS, getProduct } from "@/lib/products";
 import { clampQty } from "@/lib/cart";
 import { SITE_URL, LOCALES, LOCALE_META, type Locale } from "@/lib/constants";
+import { SHIPPING, SHIPPING_REGIONS } from "@/lib/shipping";
+import { getSoldOutIds } from "@/lib/stock";
 
 export const runtime = "nodejs";
 
@@ -19,6 +21,7 @@ const Body = z.object({
     .min(1)
     .max(20),
   locale: z.enum(LOCALES).default("en"),
+  shippingRegion: z.enum(SHIPPING_REGIONS).default("eu"),
 });
 
 // Stripe accepts its own locale codes; LOCALE_META carries the mapping so a
@@ -66,6 +69,19 @@ export async function POST(req: Request) {
   }
   void PRODUCTS;
 
+  const soldOut = await getSoldOutIds();
+  const soldOutInCart = parsed.items
+    .map((i) => i.productId)
+    .filter((id) => soldOut.includes(id));
+  if (soldOutInCart.length > 0) {
+    return NextResponse.json(
+      { error: "sold out", code: "SOLD_OUT", productIds: soldOutInCart },
+      { status: 409 },
+    );
+  }
+
+  const shipping = SHIPPING[parsed.shippingRegion];
+
   const stripe = getStripe();
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
@@ -74,47 +90,17 @@ export async function POST(req: Request) {
     line_items: lineItems,
     allow_promotion_codes: true,
     shipping_address_collection: {
-      allowed_countries: [
-        "DE",
-        "AT",
-        "CH",
-        "ES",
-        "FR",
-        "IT",
-        "NL",
-        "BE",
-        "LU",
-        "PT",
-        "DK",
-        "SE",
-        "NO",
-        "FI",
-        "IE",
-        "GB",
-        "US",
-        "CA",
-      ],
+      allowed_countries: shipping.countries,
     },
     shipping_options: [
       {
         shipping_rate_data: {
-          display_name: "Standard EU shipping",
+          display_name: shipping.label,
           type: "fixed_amount",
-          fixed_amount: { amount: 590, currency: "eur" },
+          fixed_amount: { amount: shipping.amountCents, currency: "eur" },
           delivery_estimate: {
-            minimum: { unit: "business_day", value: 3 },
-            maximum: { unit: "business_day", value: 7 },
-          },
-        },
-      },
-      {
-        shipping_rate_data: {
-          display_name: "International shipping",
-          type: "fixed_amount",
-          fixed_amount: { amount: 1490, currency: "eur" },
-          delivery_estimate: {
-            minimum: { unit: "business_day", value: 7 },
-            maximum: { unit: "business_day", value: 14 },
+            minimum: { unit: "business_day", value: shipping.days[0] },
+            maximum: { unit: "business_day", value: shipping.days[1] },
           },
         },
       },

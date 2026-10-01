@@ -1,4 +1,4 @@
-import { getResend, FROM_EMAIL, OWNER_EMAIL } from "./resend";
+import { sendEmail, FROM_EMAIL, OWNER_EMAIL } from "./resend";
 import { BUSINESS } from "./constants";
 import type { OrderDoc } from "./models/order";
 
@@ -49,7 +49,6 @@ function buildAddressBlock(order: OrderDoc): string {
 
 export async function sendOrderConfirmation(order: OrderDoc) {
   const locale = order.locale ?? "en";
-  const resend = getResend();
   const itemsRows = buildItemsRows(order, locale);
   const total = formatEUR(order.amountTotalCents, locale);
   const shipping = order.shippingCents
@@ -102,7 +101,7 @@ Total: ${total}
 
 — ${BUSINESS.name}`;
 
-  await resend.emails.send({
+  await sendEmail({
     from: FROM_EMAIL,
     to: order.email,
     subject: `${BUSINESS.name} — order confirmed`,
@@ -126,7 +125,7 @@ Total: ${total}
     </div>
   `;
 
-  await resend.emails.send({
+  await sendEmail({
     from: FROM_EMAIL,
     to: OWNER_EMAIL,
     subject: `New ${BUSINESS.name} order — ${total} — ${order.email}`,
@@ -140,7 +139,6 @@ export async function sendShippedNotification(order: OrderDoc) {
     throw new Error("trackingNumber required to send shipped notification");
   }
   const locale = order.locale ?? "en";
-  const resend = getResend();
   const customerName = order.name ?? order.email;
   const itemsRows = buildItemsRows(order, locale);
   const trackBlock = order.trackingUrl
@@ -175,7 +173,7 @@ ${order.items.map((i) => `${i.name} × ${i.quantity}`).join("\n")}
 
 — ${BUSINESS.name}`;
 
-  await resend.emails.send({
+  await sendEmail({
     from: FROM_EMAIL,
     to: order.email,
     subject: `${BUSINESS.name} — your order has shipped`,

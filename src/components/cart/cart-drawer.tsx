@@ -14,6 +14,8 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "@/i18n/navigation";
 import { useCart } from "./cart-provider";
+import { useCheckout } from "./use-checkout";
+import { ShippingRegionPicker } from "./shipping-region-picker";
 import { formatPriceEUR } from "@/lib/products";
 
 export function CartDrawer() {
@@ -29,36 +31,7 @@ export function CartDrawer() {
     setQuantity,
     removeItem,
   } = useCart();
-  const [submitting, setSubmitting] = React.useState(false);
-
-  async function checkout() {
-    if (resolved.length === 0) return;
-    setSubmitting(true);
-    try {
-      const res = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          items: resolved.map((r) => ({
-            productId: r.productId,
-            quantity: r.quantity,
-          })),
-          locale,
-        }),
-      });
-      if (!res.ok) throw new Error("checkout failed");
-      const data = await res.json();
-      if (data?.url) {
-        window.location.href = data.url;
-      } else {
-        throw new Error("no url");
-      }
-    } catch {
-      const { toast } = await import("sonner");
-      toast.error(t("checkoutFailed"));
-      setSubmitting(false);
-    }
-  }
+  const { checkout, submitting } = useCheckout();
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -166,9 +139,7 @@ export function CartDrawer() {
                   {formatPriceEUR(totalCents, locale)}
                 </span>
               </div>
-              <p className="text-xs text-muted-foreground">
-                {t("shippingNote")}
-              </p>
+              <ShippingRegionPicker />
               <Button
                 className="w-full"
                 size="lg"

@@ -19,7 +19,7 @@ const LABELS: Record<Status, string> = {
   fulfilled: "Mark fulfilled · send shipped email",
   paid: "Re-open as paid",
   cancelled: "Cancel order",
-  refunded: "Mark refunded",
+  refunded: "Refund in Stripe",
 };
 
 export function OrderStatusActions({
@@ -41,6 +41,14 @@ export function OrderStatusActions({
       toast.error("Add a tracking number first.");
       return;
     }
+    if (
+      next === "refunded" &&
+      !window.confirm(
+        "Refund the full amount (incl. shipping) to the customer's card via Stripe? This can't be undone.",
+      )
+    ) {
+      return;
+    }
     startTransition(async () => {
       const res = await fetch(`/api/admin/orders/${orderId}/status`, {
         method: "PATCH",
@@ -56,6 +64,8 @@ export function OrderStatusActions({
         toast.warning(data.warning);
       } else if (next === "fulfilled") {
         toast.success("Marked fulfilled — shipped email sent.");
+      } else if (next === "refunded") {
+        toast.success("Refunded in Stripe and marked refunded.");
       } else {
         toast.success(`Status updated to ${next}`);
       }

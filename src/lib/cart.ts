@@ -11,6 +11,7 @@ export type ResolvedCartItem = CartItem & {
 };
 
 export const CART_STORAGE_KEY = "golfalmar.cart.v1";
+export const SHIPPING_REGION_STORAGE_KEY = "golfalmar.shippingRegion.v1";
 export const MAX_QUANTITY = 10;
 
 export function resolveCart(items: CartItem[]): ResolvedCartItem[] {
